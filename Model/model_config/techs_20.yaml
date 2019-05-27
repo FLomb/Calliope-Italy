@@ -53,7 +53,7 @@ techs:
                 om_annual: 32 # €/kW/year
                 om_con: 0.00946 # €/kWh
             co2:
-                om_prod: 0.897 #kgCO2/kWh, source: ISPRA 2018
+                om_prod: 0.870 #kgCO2/kWh, source: ISPRA 2018
 
     # coal USC
     coal_usc:
@@ -75,7 +75,7 @@ techs:
                 om_annual: 35 # €/kW/year
                 om_con: 0.00946 # €/kWh
             co2:
-                om_prod: 0.897 #kgCO2/kWh, source: ISPRA 2018
+                om_prod: 0.870 #kgCO2/kWh, source: ISPRA 2018
     
     # ccgt
     ccgt:
@@ -97,7 +97,7 @@ techs:
                 om_annual: 10.5 # €/kW/year
                 om_con: 0.0291 # €/kWh
             co2:
-                om_prod: 0.393 #kgCO2/kWh, source: ISPRA 2018
+                om_prod: 0.368 #kgCO2/kWh, source: ISPRA 2018
 
     # waste-to-energy
     wte:
@@ -118,7 +118,7 @@ techs:
                 om_annual: 677.5 # €/kW/year
                 om_con: -0.1305 # €/kWh, ricavi per smaltimento rifiuti
             co2:
-                om_prod: 0.413 #kgCO2/kWh, source: ISPRA 2018
+                om_prod: 0.555 #kgCO2/kWh, source: ISPRA 2018
 
     # biomass wood
     biomass_wood:
@@ -139,6 +139,8 @@ techs:
                 om_prod: 0.0118  # €/kWh
                 om_annual: 59 # €/kW/year
                 om_con: 0.15 # €/kWh
+            co2:
+                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018
                 
     # biogas
     biogas:
@@ -158,7 +160,9 @@ techs:
                 energy_cap: 3400  # €/kW
                 om_prod: 0.0184  # €/kWh
                 om_annual: 120 # €/kW/year
-                om_con: 0.04 # €/kWh    
+                om_con: 0.04 # €/kWh             
+            co2:
+                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018   
                                 
     # biofuels
     biofuel:
@@ -179,6 +183,8 @@ techs:
                 om_prod: 0.023  # €/kWh
                 om_annual: 30 # €/kW/year
                 om_con: 0.22 # €/kWh
+            co2:
+                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018
          
     # oil and other fossil
     oil_&_other:
@@ -200,7 +206,7 @@ techs:
                 om_annual: 32 # €/kW/year
                 om_con: 0.01 # €/kWh assumption
             co2:
-                om_prod: 0.717 #kgCO2/kWh, source: ISPRA 2018
+                om_prod: 0.549 #kgCO2/kWh, source: ISPRA 2018
          
     # geothermal
     geothermal:
