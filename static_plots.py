@@ -31,7 +31,7 @@ def power_plot(model_test, start, stop):
     wind_NORD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'wind','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
     el_import_NORD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'el_import','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
     zonal_import_NORD = model_test.get_formatted_array('carrier_prod').loc[{'techs':['inter_zonal:CNOR'],'carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').sum('techs').to_pandas().T
-    zonal_export_NORD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:NORD'],'carriers':'electricity','locs':['CNOR']}].sum('locs').sum('techs').to_pandas().T
+    zonal_export_NORD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CNOR'],'carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').sum('techs').to_pandas().T
     demand_NORD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
     phs_charge_NORD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
     
@@ -68,7 +68,7 @@ def power_plot(model_test, start, stop):
     wind_CNOR = model_test.get_formatted_array('carrier_prod').loc[{'techs':'wind','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
     el_import_CNOR = model_test.get_formatted_array('carrier_prod').loc[{'techs':'el_import','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
     zonal_import_CNOR = model_test.get_formatted_array('carrier_prod').loc[{'techs':['inter_zonal:NORD','inter_zonal:CSUD','inter_zonal:SARD'],'carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').sum('techs').to_pandas().T
-    zonal_export_CNOR = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CNOR'],'carriers':'electricity','locs':['NORD','CSUD','SARD']}].sum('locs').sum('techs').to_pandas().T
+    zonal_export_CNOR = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:NORD','inter_zonal:CSUD','inter_zonal:SARD'],'carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').sum('techs').to_pandas().T
     demand_CNOR = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
     phs_charge_CNOR = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
     
@@ -179,7 +179,7 @@ def power_plot(model_test, start, stop):
     wind_SARD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'wind','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
     el_import_SARD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'el_import','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
     zonal_import_SARD = model_test.get_formatted_array('carrier_prod').loc[{'techs':['inter_zonal:CNOR','inter_zonal:CSUD'],'carriers':'electricity','locs':['SARD']}].sum('locs').sum('techs').to_pandas().T
-    zonal_export_SARD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:SARD'],'carriers':'electricity','locs':['CNOR','CSUD']}].sum('locs').sum('techs').to_pandas().T
+    zonal_export_SARD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CNOR','inter_zonal:CSUD'],'carriers':'electricity','locs':['SARD']}].sum('locs').sum('techs').to_pandas().T
     demand_SARD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
     phs_charge_SARD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
     
