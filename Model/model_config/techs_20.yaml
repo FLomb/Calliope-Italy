@@ -387,10 +387,13 @@ techs:
             parent: transmission
             carrier: electricity
         constraints:
-            energy_eff: 1.0
+            energy_eff: 1
+            #force_asynchronous_prod_con: True
         costs:
             monetary:
                 om_prod: 0.013  # €/kWh, adapted from Calliope-UK
+            co2:
+                om_prod: 0.0001 #dummy cost to avoid weird transmission behaviour
                 
     # free intra-zonal
     free_transmission:  # Generic HVAC intra-zonal transmission technology

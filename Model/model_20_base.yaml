@@ -1,6 +1,6 @@
 import:  # Import other files from paths relative to this file, or absolute paths
     - 'model_config/techs_20.yaml'  # This file specifies the model's technologies
-    - 'model_config/locations_20_plan.yaml'  # This file specifies the model's locations
+    - 'model_config/locations_20.yaml'  # This file specifies the model's locations
     - 'overrides.yaml' # This import overrides
  
 # Model configuration: all settings that affect the built model
@@ -14,12 +14,11 @@ model:
     timeseries_data_path: 'timeseries_data'
 
     subset_time: ['2015-03-30', '2015-04-05']  # Subset of timesteps
-    
-    reserve_margin:
-        electricity: 0.1  # 10% reserve margin for power
 
 # Run configuration: all settings that affect how the built model is run
 run:
+    objective_options.cost_class: {'monetary': 0, 'co2': 1}
+    
     solver: cplex
 
     ensure_feasibility: False  # Switches on the "unmet demand" constraint
@@ -34,3 +33,8 @@ run:
         horizon: 48
         window: 24
         
+group_constraints:
+    #A constraint to stay in a neighbourhood of the optimal cost
+    systemwide_max_slacked_cost:
+        cost_max:
+            monetary: 594427368.3359247

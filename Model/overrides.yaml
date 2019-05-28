@@ -1,19 +1,28 @@
 ##
 # Overrides for different example model configuratiions
 ##
-overrides:
-    reserve_margin:
-        model.name: Italian energy system with reserve margin
-        model:
-            # Model-wide settings for the system-wide reserve margin
-            # Even setting a reserve margin of zero activates the constraint,
-            # forcing enough installed capacity to cover demand in
-            # the maximum demand timestep
-            reserve_margin:
-                electricity: 0.1  # 10% reserve margin for power
-
-       
-        
+overrides: 
+    max_cost1:
+        group_constraints:
+            #A constraint to stay in a neighbourhood of the optimal cost
+            systemwide_max_slacked_cost:
+                cost_max:
+                    monetary: 5.45792e+08
+    max_cost2:
+        group_constraints:
+            #A constraint to stay in a neighbourhood of the optimal cost
+            systemwide_max_slacked_cost:
+                cost_max:
+                    monetary: 5.67408e+08
+    max_cost3:
+        group_constraints:
+            #A constraint to stay in a neighbourhood of the optimal cost
+            systemwide_max_slacked_cost:
+                cost_max:
+                    monetary: 5.94427e+08
+    min_co2:
+        run.objective_options.cost_class: {'monetary': 0, 'co2': 1}
+   
 
     no_heat:
         model.name: Removed heat-pumps and DHW loads

@@ -34,6 +34,10 @@ def power_plot(model_test, start, stop):
     zonal_export_NORD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CNOR'],'carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').sum('techs').to_pandas().T
     demand_NORD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
     phs_charge_NORD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['NORD','R1','R2','R3','R4','R5','R6','R7','R8']}].sum('locs').to_pandas().T
+    zonal_imp_NORD = zonal_export_NORD+zonal_import_NORD
+    zonal_imp_NORD[zonal_imp_NORD<0]=0
+    zonal_exp_NORD = zonal_export_NORD+zonal_import_NORD
+    zonal_exp_NORD[zonal_exp_NORD>0]=0
     
     geo_NORD = geothermal_NORD/1000000
     ror_NORD = geo_NORD + hydro_ror_NORD/1000000
@@ -46,9 +50,9 @@ def power_plot(model_test, start, stop):
     coa_NORD = oil_NORD + coal_NORD/1000000 + coal_usc_NORD/1000000
     gas_NORD = coa_NORD + ccgt_NORD/1000000
     pum_NORD = gas_NORD + phs_NORD/1000000
-    zon_NORD = pum_NORD + zonal_import_NORD/1000000
+    zon_NORD = pum_NORD + zonal_imp_NORD/1000000
     pch_NORD = phs_charge_NORD/1000000
-    zwx_NORD = pch_NORD + zonal_export_NORD/1000000
+    zwx_NORD = pch_NORD + zonal_exp_NORD/1000000
     loa_NORD = demand_NORD/1000000
     
     ccgt_CNOR = model_test.get_formatted_array('carrier_prod').loc[{'techs':'ccgt','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
@@ -71,6 +75,10 @@ def power_plot(model_test, start, stop):
     zonal_export_CNOR = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:NORD','inter_zonal:CSUD','inter_zonal:SARD'],'carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').sum('techs').to_pandas().T
     demand_CNOR = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
     phs_charge_CNOR = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['CNOR','R9','R10','R11']}].sum('locs').to_pandas().T
+    zonal_imp_CNOR = zonal_export_CNOR+zonal_import_CNOR
+    zonal_imp_CNOR[zonal_imp_CNOR<0]=0
+    zonal_exp_CNOR = zonal_export_CNOR+zonal_import_CNOR
+    zonal_exp_CNOR[zonal_exp_CNOR>0]=0
     
     geo_CNOR = geothermal_CNOR/1000000
     ror_CNOR = geo_CNOR + hydro_ror_CNOR/1000000
@@ -83,9 +91,9 @@ def power_plot(model_test, start, stop):
     coa_CNOR = oil_CNOR + coal_CNOR/1000000 + coal_usc_CNOR/1000000
     gas_CNOR = coa_CNOR + ccgt_CNOR/1000000
     pum_CNOR = gas_CNOR + phs_CNOR/1000000
-    zon_CNOR = pum_CNOR + zonal_import_CNOR/1000000
+    zon_CNOR = pum_CNOR + zonal_imp_CNOR/1000000
     pch_CNOR = phs_charge_CNOR/1000000
-    zwx_CNOR = pch_CNOR + zonal_export_CNOR/1000000
+    zwx_CNOR = pch_CNOR + zonal_exp_CNOR/1000000
     loa_CNOR = demand_CNOR/1000000
     
     ccgt_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'ccgt','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
@@ -108,6 +116,10 @@ def power_plot(model_test, start, stop):
     zonal_export_CSUD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:SUD','inter_zonal:SARD','inter_zonal:CNOR'],'carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').sum('techs').to_pandas().T
     demand_CSUD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
     phs_charge_CSUD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
+    zonal_imp_CSUD = zonal_export_CSUD+zonal_import_CSUD
+    zonal_imp_CSUD[zonal_imp_CSUD<0]=0
+    zonal_exp_CSUD = zonal_export_CSUD+zonal_import_CSUD
+    zonal_exp_CSUD[zonal_exp_CSUD>0]=0
     
     geo_CSUD = geothermal_CSUD/1000000
     ror_CSUD = geo_CSUD + hydro_ror_CSUD/1000000
@@ -120,9 +132,9 @@ def power_plot(model_test, start, stop):
     coa_CSUD = oil_CSUD + coal_CSUD/1000000 + coal_usc_CSUD/1000000
     gas_CSUD = coa_CSUD + ccgt_CSUD/1000000
     pum_CSUD = gas_CSUD + phs_CSUD/1000000
-    zon_CSUD = pum_CSUD + zonal_import_CSUD/1000000
+    zon_CSUD = pum_CSUD + zonal_imp_CSUD/1000000
     pch_CSUD = phs_charge_CSUD/1000000
-    zwx_CSUD = pch_CSUD + zonal_export_CSUD/1000000
+    zwx_CSUD = pch_CSUD + zonal_exp_CSUD/1000000
     loa_CSUD = demand_CSUD/1000000
     
     ccgt_SUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'ccgt','carriers':'electricity','locs':['SUD','R15','R16','R17','R18']}].sum('locs').to_pandas().T
@@ -145,6 +157,10 @@ def power_plot(model_test, start, stop):
     zonal_export_SUD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CSUD','inter_zonal:SICI'],'carriers':'electricity','locs':['SUD','R15','R16','R17','R18']}].sum('locs').sum('techs').to_pandas().T
     demand_SUD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['SUD','R15','R16','R17','R18']}].sum('locs').to_pandas().T
     phs_charge_SUD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['SUD','R15','R16','R17','R18']}].sum('locs').to_pandas().T
+    zonal_imp_SUD = zonal_export_SUD+zonal_import_SUD
+    zonal_imp_SUD[zonal_imp_SUD<0]=0
+    zonal_exp_SUD = zonal_export_SUD+zonal_import_SUD
+    zonal_exp_SUD[zonal_exp_SUD>0]=0
     
     geo_SUD = geothermal_SUD/1000000
     ror_SUD = geo_SUD + hydro_ror_SUD/1000000
@@ -157,9 +173,9 @@ def power_plot(model_test, start, stop):
     coa_SUD = oil_SUD + coal_SUD/1000000 + coal_usc_SUD/1000000
     gas_SUD = coa_SUD + ccgt_SUD/1000000
     pum_SUD = gas_SUD + phs_SUD/1000000
-    zon_SUD = pum_SUD + zonal_import_SUD/1000000
+    zon_SUD = pum_SUD + zonal_imp_SUD/1000000
     pch_SUD = phs_charge_SUD/1000000
-    zwx_SUD = pch_SUD + zonal_export_SUD/1000000
+    zwx_SUD = pch_SUD + zonal_exp_SUD/1000000
     loa_SUD = demand_SUD/1000000
     
     ccgt_SARD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'ccgt','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
@@ -182,6 +198,10 @@ def power_plot(model_test, start, stop):
     zonal_export_SARD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:CNOR','inter_zonal:CSUD'],'carriers':'electricity','locs':['SARD']}].sum('locs').sum('techs').to_pandas().T
     demand_SARD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
     phs_charge_SARD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['SARD']}].sum('locs').to_pandas().T
+    zonal_imp_SARD = zonal_export_SARD+zonal_import_SARD
+    zonal_imp_SARD[zonal_imp_SARD<0]=0
+    zonal_exp_SARD = zonal_export_SARD+zonal_import_SARD
+    zonal_exp_SARD[zonal_exp_SARD>0]=0
     
     geo_SARD = geothermal_SARD/1000000
     ror_SARD = geo_SARD + hydro_ror_SARD/1000000
@@ -194,9 +214,9 @@ def power_plot(model_test, start, stop):
     coa_SARD = oil_SARD + coal_SARD/1000000 + coal_usc_SARD/1000000
     gas_SARD = coa_SARD + ccgt_SARD/1000000
     pum_SARD = gas_SARD + phs_SARD/1000000
-    zon_SARD = pum_SARD + zonal_import_SARD/1000000
+    zon_SARD = pum_SARD + zonal_imp_SARD/1000000
     pch_SARD = phs_charge_SARD/1000000
-    zwx_SARD = pch_SARD + zonal_export_SARD/1000000
+    zwx_SARD = pch_SARD + zonal_exp_SARD/1000000
     loa_SARD = demand_SARD/1000000
     
     ccgt_SICI = model_test.get_formatted_array('carrier_prod').loc[{'techs':'ccgt','carriers':'electricity','locs':['SICI']}].sum('locs').to_pandas().T
@@ -219,6 +239,10 @@ def power_plot(model_test, start, stop):
     zonal_export_SICI = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:SUD'],'carriers':'electricity','locs':['SICI']}].sum('locs').sum('techs').to_pandas().T
     demand_SICI = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['SICI']}].sum('locs').to_pandas().T
     phs_charge_SICI = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['SICI']}].sum('locs').to_pandas().T
+    zonal_imp_SICI = zonal_export_SICI+zonal_import_SICI
+    zonal_imp_SICI[zonal_imp_SICI<0]=0
+    zonal_exp_SICI = zonal_export_SICI+zonal_import_SICI
+    zonal_exp_SICI[zonal_exp_SICI>0]=0
     
     geo_SICI = geothermal_SICI/1000000
     ror_SICI = geo_SICI + hydro_ror_SICI/1000000
@@ -231,9 +255,9 @@ def power_plot(model_test, start, stop):
     coa_SICI = oil_SICI + coal_SICI/1000000 + coal_usc_SICI/1000000
     gas_SICI = coa_SICI + ccgt_SICI/1000000
     pum_SICI = gas_SICI + phs_SICI/1000000
-    zon_SICI = pum_SICI + zonal_import_SICI/1000000
+    zon_SICI = pum_SICI + zonal_imp_SICI/1000000
     pch_SICI = phs_charge_SICI/1000000
-    zwx_SICI = pch_SICI + zonal_export_SICI/1000000
+    zwx_SICI = pch_SICI + zonal_exp_SICI/1000000
     loa_SICI = demand_SICI/1000000
 
 
@@ -437,8 +461,8 @@ def power_plot(model_test, start, stop):
     ax5.margins(y=0)
     #ax5.set_xticks(np.arange(0,24,3))
     #ax5.set_xticklabels(['0','3','6','9','12','15','18','21','24'])
-    ax5.xaxis.set_major_locator(plt.MaxNLocator(6))
-    ax5.xaxis.set_major_formatter(plt.FixedFormatter(['','day1','day2','day3','day4','day5','day6']))
+    ax5.xaxis.set_major_locator(plt.MaxNLocator(len(geo_SICI[day:end])/24))
+    ax5.xaxis.set_major_formatter(plt.FixedFormatter(['day1','day2','day3','day4','day5','day6','day7']))
     ax5.fill_between(geo_SARD[day:end].index,0,geo_SARD[day:end].values,facecolor = '#873737', alpha = 0.6, label = 'Geothermal')
     ax5.fill_between(geo_SARD[day:end].index,geo_SARD[day:end].values,ror_SARD[day:end].values,facecolor = '#00AFE7', alpha = 0.6, label = 'Run-of-river')
     ax5.fill_between(geo_SARD[day:end].index,ror_SARD[day:end].values,win_SARD[day:end].values,facecolor = '#00E71F', alpha = 0.6, label = 'Wind')
@@ -480,8 +504,8 @@ def power_plot(model_test, start, stop):
     ax6.margins(y=0)
     #ax6.set_xticks(np.arange(day,end,dtype='datetime64[h]'))
     #ax6.set_xticklabels(np.arange(0,len(np.arange(day,end,dtype='datetime64[h]'))))
-    ax6.xaxis.set_major_locator(plt.MaxNLocator(6))
-    ax6.xaxis.set_major_formatter(plt.FixedFormatter(['','day1','day2','day3','day4','day5','day6']))
+    ax6.xaxis.set_major_locator(plt.MaxNLocator(len(geo_SICI[day:end])/24))
+    ax6.xaxis.set_major_formatter(plt.FixedFormatter(['day1','day2','day3','day4','day5','day6','day7']))
     ax6.fill_between(geo_SICI[day:end].index,0,geo_SICI[day:end].values,facecolor = '#873737', alpha = 0.6, label = 'Geothermal')
     ax6.fill_between(geo_SICI[day:end].index,geo_SICI[day:end].values,ror_SICI[day:end].values,facecolor = '#00AFE7', alpha = 0.6, label = 'Run-of-river')
     ax6.fill_between(geo_SICI[day:end].index,ror_SICI[day:end].values,win_SICI[day:end].values,facecolor = '#00E71F', alpha = 0.6, label = 'Wind')
