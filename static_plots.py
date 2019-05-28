@@ -104,8 +104,8 @@ def power_plot(model_test, start, stop):
     pv_rooftop_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'pv_rooftop','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
     wind_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'wind','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
     el_import_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':'el_import','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
-    zonal_import_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':['inter_zonal:SUD','inter_zonal:SARD'],'carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').sum('techs').to_pandas().T
-    zonal_export_CSUD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:SUD','inter_zonal:SARD'],'carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').sum('techs').to_pandas().T
+    zonal_import_CSUD = model_test.get_formatted_array('carrier_prod').loc[{'techs':['inter_zonal:SUD','inter_zonal:SARD', 'inter_zonal:CNOR'],'carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').sum('techs').to_pandas().T
+    zonal_export_CSUD = model_test.get_formatted_array('carrier_con').loc[{'techs':['inter_zonal:SUD','inter_zonal:SARD','inter_zonal:CNOR'],'carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').sum('techs').to_pandas().T
     demand_CSUD = -model_test.get_formatted_array('carrier_con').loc[{'techs':'demand_power','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
     phs_charge_CSUD = model_test.get_formatted_array('carrier_con').loc[{'techs':'phs','carriers':'electricity','locs':['CSUD','R12','R13','R14']}].sum('locs').to_pandas().T
     
