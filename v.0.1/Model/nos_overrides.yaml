@@ -1,0 +1,163 @@
+overrides:
+  nos:
+    locations:
+      R1:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.010531913777406152
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0023332864043699615
+          wind:
+            costs.nos_score.energy_cap: 0.00015893400145708432
+      R10:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0031727622737682845
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.000732110879052314
+          wind:
+            costs.nos_score.energy_cap: 1.6907872495434502e-05
+      R11:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.007791993039520991
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0010897123823307537
+          wind:
+            costs.nos_score.energy_cap: 7.693081985422699e-05
+      R12:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.008377005427863024
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0019579316349713155
+          wind:
+            costs.nos_score.energy_cap: 0.00043791389763175366
+      R13:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.005028401280142221
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0008851271251359963
+          wind:
+            costs.nos_score.energy_cap: 0.00221493129690192
+      R14:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.004825506810197007
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0013610837358824775
+          wind:
+            costs.nos_score.energy_cap: 0.011144824155365652
+      R15:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0012258207559190015
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.00019528592732226852
+          wind:
+            costs.nos_score.energy_cap: 0.0031414827096517307
+      R16:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.019951289544612713
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0020314808803264554
+          wind:
+            costs.nos_score.energy_cap: 0.019947062576488855
+      R17:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.002666371492530021
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.00038634488652067837
+          wind:
+            costs.nos_score.energy_cap: 0.006435981665387143
+      R18:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0029884664635680485
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0011032386803271014
+          wind:
+            costs.nos_score.energy_cap: 0.008666975441159725
+      R2:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 7.946700072854216e-05
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.00010482880947169392
+          wind:
+            costs.nos_score.energy_cap: 2.1980234244064852e-05
+      R3:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.013321712739152844
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.004510174988157154
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R4:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.002358648213113113
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0011311366699445682
+          wind:
+            costs.nos_score.energy_cap: 1.6907872495434502e-05
+      R5:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.01056995649052088
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.00425824768797518
+          wind:
+            costs.nos_score.energy_cap: 7.946700072854216e-05
+      R6:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0028743383242238654
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.00139659026812289
+          wind:
+            costs.nos_score.energy_cap: 0.16292420310240385
+      R7:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0004987822386153178
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0003161772156646252
+          wind:
+            costs.nos_score.energy_cap: 0.0004911736959923723
+      R8:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.012910006043889016
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.003133874167028785
+          wind:
+            costs.nos_score.energy_cap: 0.00020881222531861612
+      R9:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.004739276660470291
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0016713431961737006
+          wind:
+            costs.nos_score.energy_cap: 0.0010356071903453634
+      SARD:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.004695316191982162
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0014413961302357913
+          wind:
+            costs.nos_score.energy_cap: 0.008500432897079696
+      SICI:
+        techs:
+          pv_farm:
+            costs.nos_score.energy_cap: 0.008772649644256192
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.002295243691255234
+          wind:
+            costs.nos_score.energy_cap: 0.01485863834898784

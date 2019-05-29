@@ -1,8 +1,8 @@
 import:  # Import other files from paths relative to this file, or absolute paths
     - 'model_config/techs_20.yaml'  # This file specifies the model's technologies
-    - 'model_config/locations_20_plan.yaml'  # This file specifies the model's locations
+    - 'model_config/locations_20_plan_nos.yaml'  # This file specifies the model's locations
     - 'overrides.yaml' # This import overrides
- 
+    - 'nos_overrides.yaml' # This importes the NOS algorithm override
 # Model configuration: all settings that affect the built model
 model:
     name: Italy energy system 6-20 nodes

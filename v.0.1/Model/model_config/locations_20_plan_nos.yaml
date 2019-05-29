@@ -8,7 +8,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 20000000 #kW, i.e. 20 GW  
+                    energy_cap_min: 20000000 #kW, i.e. 20 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 7361600 #kW
@@ -31,17 +31,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 18800 
-                    energy_cap_equals: 18800 #kW
+                    energy_cap_min: 18800 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1.000189868 # score/kW
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 1245800 
-                    energy_cap_equals: 1245800 #kW
+                    energy_cap_min: 1245800 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 276000
-                    energy_cap_equals: 276000 #kW
+                    energy_cap_min: 276000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             phs: 
                 constraints:
                     energy_cap_equals:  1356000 #kW 
@@ -86,17 +95,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 2600 
-                    energy_cap_equals: 2600 #kW
+                    energy_cap_min: 2600 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 2.62584e-05 # score/kW
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 9400 
-                    energy_cap_equals: 9400 #kW
+                    energy_cap_min: 9400 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 12400
-                    energy_cap_equals: 12400 #kW
+                    energy_cap_min: 12400 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             wte:
                 constraints:
                     energy_cap_equals: 32700 #kW
@@ -129,16 +147,30 @@ locations:
     # 03-Lombardia-start
     R3:
         techs:
+            wind: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    # resource_area_max: 0 
+                    energy_cap_min: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 1575800 
-                    energy_cap_equals: 1575800 #kW
+                    energy_cap_min: 1575800 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 533500
-                    energy_cap_equals: 533500 #kW
+                    energy_cap_min: 533500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             phs: 
                 constraints:
                     energy_cap_equals:  2676500 #kW 
@@ -183,17 +215,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 2000 
-                    energy_cap_equals: 2000 #kW
+                    energy_cap_min: 2000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 2.01987e-05 # score/kW
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 279000 
-                    energy_cap_equals: 279000 #kW
+                    energy_cap_min: 279000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 133800
-                    energy_cap_equals: 133800 #kW
+                    energy_cap_min: 133800 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW
             phs: 
                 constraints:
                     energy_cap_equals:  499400 #kW 
@@ -238,17 +279,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 9400 
-                    energy_cap_equals: 9400 #kW
+                    energy_cap_min: 9400 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 9.49341e-05 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 1250300 
-                    energy_cap_equals: 1250300 #kW
+                    energy_cap_min: 1250300 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 503700
-                    energy_cap_equals: 503700 #kW
+                    energy_cap_min: 503700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             phs: 
                 constraints:
                     energy_cap_equals: 206800 #kW 
@@ -285,16 +335,30 @@ locations:
     # 06-Friuli Venezia Giulia-start
     R6:
         techs:
+            wind: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    # resource_area_max: 0 
+                    energy_cap_min: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 340000 
-                    energy_cap_equals: 340000 #kW
+                    energy_cap_min: 340000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 165200
-                    energy_cap_equals: 165200 #kW
+                    energy_cap_min: 165200 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 9900 #kW
@@ -335,17 +399,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 58100 
-                    energy_cap_equals: 58100 #kW
+                    energy_cap_min: 58100 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.000586773 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 59000 
-                    energy_cap_equals: 59000 #kW
+                    energy_cap_min: 59000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 37400
-                    energy_cap_equals: 37400 #kW
+                    energy_cap_min: 37400 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             biogas:
                 constraints:
                     energy_cap_equals: 1200 #kW 
@@ -376,17 +449,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 24700 
-                    energy_cap_equals: 24700 #kW
+                    energy_cap_min: 24700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.000249454 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 1527100 
-                    energy_cap_equals: 1527100 #kW
+                    energy_cap_min: 1527100 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 370700
-                    energy_cap_equals: 370700 #kW
+                    energy_cap_min: 370700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             phs: 
                 constraints:
                     energy_cap_equals:  325600 #kW 
@@ -427,7 +509,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2000000 #kW, i.e. 2 GW  
+                    energy_cap_min: 2000000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 790900 #kW
@@ -447,7 +529,7 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 1280000 #kW
+                    energy_cap_max: 1280000 #kW
             geothermal:
                 constraints:
                     resource: 768000
@@ -456,17 +538,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 122500 
-                    energy_cap_equals: 122500 #kW
+                    energy_cap_min: 122500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.00123717 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 560600 
-                    energy_cap_equals: 560600  #kW
+                    energy_cap_min: 560600  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 197700
-                    energy_cap_equals: 197700 #kW
+                    energy_cap_min: 197700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 22100 #kW
@@ -501,22 +592,31 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_equals: 150000 #kW
+                    energy_cap_max: 150000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 2000 
-                    energy_cap_equals: 2000 #kW
+                    energy_cap_min: 2000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 2.01987e-05 # score/kW  
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 375300 
-                    energy_cap_equals: 375300  #kW
+                    energy_cap_min: 375300  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 86600
-                    energy_cap_equals: 86600 #kW
+                    energy_cap_min: 86600 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             biomass_wood:
                 constraints:
                     energy_cap_equals: 19400 #kW  
@@ -550,17 +650,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 9100 
-                    energy_cap_equals: 9100 #kW
+                    energy_cap_min: 9100 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 9.19042e-05 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 921700 
-                    energy_cap_equals: 921700  #kW
+                    energy_cap_min: 921700  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 128900
-                    energy_cap_equals: 128900 #kW
+                    energy_cap_min: 128900 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 900 #kW
@@ -594,7 +703,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW  
+                    energy_cap_min: 8800000 #kW, i.e. 8.8 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 563400 #kW
@@ -614,22 +723,31 @@ locations:
         techs:
             coal_usc:
                 constraints:
-                    energy_cap_equals: 1845000 #kW
+                    energy_cap_max: 1845000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 51800 
-                    energy_cap_equals: 51800 #kW
+                    energy_cap_min: 51800 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.000523147 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 990900 
-                    energy_cap_equals: 990900  #kW
+                    energy_cap_min: 990900  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 231600
-                    energy_cap_equals: 231600 #kW
+                    energy_cap_min: 231600 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 54200 #kW
@@ -666,17 +784,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 262000 
-                    energy_cap_equals: 262000 #kW
+                    energy_cap_min: 262000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.00264603 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 594800 
-                    energy_cap_equals: 594800  #kW
+                    energy_cap_min: 594800  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 104700
-                    energy_cap_equals: 104700 #kW
+                    energy_cap_min: 104700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             phs: 
                 constraints:
                     energy_cap_equals:  579200 #kW 
@@ -714,17 +841,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 1318300 
-                    energy_cap_equals: 1318300  #kW
+                    energy_cap_min: 1318300  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.013314 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 570800 
-                    energy_cap_equals: 570800  #kW
+                    energy_cap_min: 570800  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 161000
-                    energy_cap_equals: 161000 #kW
+                    energy_cap_min: 161000 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             phs: 
                 constraints:
                     energy_cap_equals:  1102400 #kW 
@@ -765,7 +901,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW  
+                    energy_cap_min: 8800000 #kW, i.e. 8.8 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 686700 #kW
@@ -787,17 +923,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 371600 
-                    energy_cap_equals: 371600  #kW
+                    energy_cap_min: 371600  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.00375293 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 145000 
-                    energy_cap_equals: 145000  #kW
+                    energy_cap_min: 145000  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 23100
-                    energy_cap_equals: 23100 #kW
+                    energy_cap_min: 23100 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 13600 #kW
@@ -832,22 +977,31 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_equals: 3060000 #kW
+                    energy_cap_max: 3060000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 2359500 
-                    energy_cap_equals: 2359500  #kW
+                    energy_cap_min: 2359500  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.0238295 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 2360000 
-                    energy_cap_equals: 2360000  #kW
+                    energy_cap_min: 2360000  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 240300
-                    energy_cap_equals: 240300 #kW
+                    energy_cap_min: 240300 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 13300 #kW
@@ -884,17 +1038,26 @@ locations:
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 761300 
-                    energy_cap_equals: 761300  #kW
+                    energy_cap_min: 761300  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.00768865 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 315400 
-                    energy_cap_equals: 315400  #kW
+                    energy_cap_min: 315400  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 45700
-                    energy_cap_equals: 45700 #kW
+                    energy_cap_min: 45700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 2900 #kW
@@ -929,22 +1092,31 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 1738000 #kW
+                    energy_cap_max: 1738000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 1025200 
-                    energy_cap_equals: 1025200  #kW
+                    energy_cap_min: 1025200  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.0103539 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 353500 
-                    energy_cap_equals: 353500  #kW
+                    energy_cap_min: 353500  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 130500
-                    energy_cap_equals: 130500 #kW
+                    energy_cap_min: 130500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             wte:
                 constraints:
                     energy_cap_equals: 2900 #kW
@@ -956,7 +1128,7 @@ locations:
                     energy_cap_equals: 65500 #kW 
             biofuel:
                 constraints:
-                    energy_cap_equals: 10600 #kW 
+                    energy_cap_equals: 10600 #kW
             ashp:
                 constraints:
                     energy_cap_equals: 547965 #kW
@@ -986,7 +1158,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2000000 #kW, i.e. 2 GW  
+                    energy_cap_min: 2000000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 15800 #kW
@@ -997,22 +1169,31 @@ locations:
                     # resource_area_max: 130000
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 530000 #kW
+                    energy_cap_max: 530000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv
                     # resource_area_max: 1757600 
-                    energy_cap_equals: 1757600 #kW
+                    energy_cap_min: 1757600 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.0177506 # score/kW                    
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv
                     # resource_area_max: 1037700 
-                    energy_cap_equals: 1037700 #kW
+                    energy_cap_min: 1037700 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv
                     # resource_area_max: 271500
-                    energy_cap_equals: 271500 #kW
+                    energy_cap_min: 271500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW                    
             phs: 
                 constraints:
                     energy_cap_equals:  573700 #kW 
@@ -1053,7 +1234,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2400000 #kW, i.e. 2 GW  
+                    energy_cap_min: 2400000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 183800 #kW
@@ -1064,25 +1245,34 @@ locations:
                     # resource_area_max: 40000
             coal:
                 constraints:
-                    energy_cap_equals: 1072000 #kW
+                    energy_cap_max: 1072000 #kW
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 320000 #kW
+                    energy_cap_max: 320000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
                     # resource_area_max: 1005500 
-                    energy_cap_equals: 1005500 #kW
+                    energy_cap_min: 1005500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0.0101549 # score/kW 
             pv_farm: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 555400 
-                    energy_cap_equals: 555400 #kW
+                    energy_cap_min: 555400 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW 
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
                     # resource_area_max: 170500
-                    energy_cap_equals: 170500 #kW
+                    energy_cap_min: 170500 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 1 # score/kW 
             phs: 
                 constraints:
                     energy_cap_equals:  236900 #kW 

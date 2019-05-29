@@ -54,6 +54,13 @@ techs:
                 om_con: 0.00946 # €/kWh
             co2:
                 om_prod: 0.870 #kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.023  # €/kWh
+                om_annual: 32 # €/kW/year
+                om_con: 0.00946 # €/kWh
 
     # coal USC
     coal_usc:
@@ -76,7 +83,14 @@ techs:
                 om_con: 0.00946 # €/kWh
             co2:
                 om_prod: 0.870 #kgCO2/kWh, source: ISPRA 2018
-    
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.025  # €/kWh
+                om_annual: 35 # €/kW/year
+                om_con: 0.00946 # €/kWh
+                
     # ccgt
     ccgt:
         essentials:
@@ -98,7 +112,14 @@ techs:
                 om_con: 0.0291 # €/kWh
             co2:
                 om_prod: 0.368 #kgCO2/kWh, source: ISPRA 2018
-
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:                
+                om_prod: 0.00315  # €/kWh
+                om_annual: 10.5 # €/kW/year
+                om_con: 0.0291 # €/kWh
+                
     # waste-to-energy
     wte:
         essentials:
@@ -119,7 +140,14 @@ techs:
                 om_con: -0.1305 # €/kWh, ricavi per smaltimento rifiuti
             co2:
                 om_prod: 0.555 #kgCO2/kWh, source: ISPRA 2018
-
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:                
+                om_prod: 0.03305  # €/kWh
+                om_annual: 677.5 # €/kW/year
+                om_con: -0.1305 # €/kWh, ricavi per smaltimento rifiuti
+                
     # biomass wood
     biomass_wood:
         essentials:
@@ -141,6 +169,13 @@ techs:
                 om_con: 0.15 # €/kWh
             co2:
                 om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.0118  # €/kWh
+                om_annual: 59 # €/kW/year
+                om_con: 0.15 # €/kWh
                 
     # biogas
     biogas:
@@ -162,8 +197,15 @@ techs:
                 om_annual: 120 # €/kW/year
                 om_con: 0.04 # €/kWh             
             co2:
-                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018   
-                                
+                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018  
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1  
+            ghost_cost:
+                om_prod: 0.0184  # €/kWh
+                om_annual: 120 # €/kW/year
+                om_con: 0.04 # €/kWh   
+                
     # biofuels
     biofuel:
         essentials:
@@ -185,7 +227,14 @@ techs:
                 om_con: 0.22 # €/kWh
             co2:
                 om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018
-         
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.023  # €/kWh
+                om_annual: 30 # €/kW/year
+                om_con: 0.22 # €/kWh
+                        
     # oil and other fossil
     oil_&_other:
         essentials:
@@ -207,7 +256,14 @@ techs:
                 om_con: 0.01 # €/kWh assumption
             co2:
                 om_prod: 0.549 #kgCO2/kWh, source: ISPRA 2018
-         
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.023  # €/kWh
+                om_annual: 32 # €/kW/year
+                om_con: 0.01 # €/kWh assumption
+                
     # geothermal
     geothermal:
         essentials:
@@ -224,7 +280,13 @@ techs:
                 energy_cap: 347  # €/kW
                 om_prod: 0.0188  # €/kWh
                 om_annual: 170 # €/kW/year
-
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.0188  # €/kWh
+                om_annual: 170 # €/kW/year
+                
     # wind
     wind:
         essentials:
@@ -242,7 +304,13 @@ techs:
                 energy_cap: 1750  # €/kW
                 om_prod: 0.013  # €/kWh
                 om_annual: 13 # €/kW/year
-   
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            ghost_cost:
+                om_prod: 0.013  # €/kWh
+                om_annual: 13 # €/kW/year                
+                
     # pv farm
     pv_farm:
         essentials:
@@ -260,7 +328,13 @@ techs:
                 energy_cap: 1200  # €/kW
                 om_prod: 0.0231  # €/kWh
                 om_annual: 20 # €/kW/year
-    
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            ghost_cost:
+                om_prod: 0.0231  # €/kWh
+                om_annual: 20 # €/kW/year            
+                
     # pv rooftop
     pv_rooftop:
         essentials:
@@ -278,7 +352,13 @@ techs:
                 energy_cap: 2200  # €/kW
                 om_prod: 0.0411  # €/kWh
                 om_annual: 43 # €/kW/year
-        
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            ghost_cost:
+                om_prod: 0.0411  # €/kWh
+                om_annual: 43 # €/kW/year            
+                
     #hydro reservoir and basin type
     hydro_dam:
         essentials:
@@ -297,7 +377,13 @@ techs:
                 interest_rate: 0.10
                 energy_cap: 2750  # €/kW
                 om_annual: 55 # €/kW/year
-   
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_annual: 55 # €/kW/year
+                om_prod: 0.0001
+            
     #hydro run-of-river
     hydro_ror:
         essentials:
@@ -316,7 +402,13 @@ techs:
                 interest_rate: 0.10
                 energy_cap: 4000  # €/kW
                 om_annual: 100 # €/kW/year
-   
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_annual: 100 # €/kW/year
+                om_prod: 0.0001
+                
     ##
     # Storage
     ##
@@ -336,7 +428,13 @@ techs:
                 interest_rate: 0.10
                 energy_cap: 1500  # €/kW
                 om_annual: 30 # €/kW/year
-    
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_annual: 30 # €/kW/year
+                om_prod: 0.0001
+                
     #Thermal energy storage for DHW
     tes:
         essentials:
@@ -355,8 +453,7 @@ techs:
             monetary:
                 interest_rate: 0.10
                 energy_cap: 133  # €/kWh, 2331€ for 500l storage tank
-
-    
+  
     
     ##
     # Transmission
@@ -375,10 +472,16 @@ techs:
             #resource_cap_equals:  5392000 #0.8*6740000
             energy_prod: True
             resource_eff: 1
+            lifetime: 100
         costs:
             monetary:
                 om_prod: 0.04  # wholesale price EU from Pfenninger UK, in line with Terna - Piani di Sviluppo
-    
+            nos_score:
+                interest_rate: 1
+                energy_cap: 1
+            ghost_cost:
+                om_prod: 0.04
+                
     # inter-zonal
     inter_zonal:  # Generic HVAC inter-zonal transmission technology
         essentials:
@@ -394,6 +497,8 @@ techs:
                 om_prod: 0.013  # €/kWh, adapted from Calliope-UK
             co2:
                 om_prod: 0.0001 #dummy cost to avoid weird transmission behaviour
+            ghost_cost:
+                om_prod: 0.013
                 
     # free intra-zonal
     free_transmission:  # Generic HVAC intra-zonal transmission technology

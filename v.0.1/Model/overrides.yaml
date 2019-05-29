@@ -8,13 +8,13 @@ overrides:
             systemwide_max_slacked_cost:
                 cost_max:
                     monetary: 5.45792e+08
-    max_cost2:
+    max_cost5:
         group_constraints:
             #A constraint to stay in a neighbourhood of the optimal cost
             systemwide_max_slacked_cost:
                 cost_max:
                     monetary: 5.67408e+08
-    max_cost3:
+    max_cost10:
         group_constraints:
             #A constraint to stay in a neighbourhood of the optimal cost
             systemwide_max_slacked_cost:
@@ -22,7 +22,9 @@ overrides:
                     monetary: 5.94427e+08
     min_co2:
         run.objective_options.cost_class: {'monetary': 0, 'co2': 1}
-   
+    max_diff:
+        run.objective_options.cost_class: {'monetary': 0, 'co2': 1, 'ghost_cost': 0, 'nos_score': 1e+09}
+        run.objective_options.sense: 'minimize'
 
     no_heat:
         model.name: Removed heat-pumps and DHW loads
