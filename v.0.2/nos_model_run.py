@@ -40,7 +40,7 @@ Model creation, run and saving to netCDF - Iteration 0
 
 model_plan_0 = calliope.Model('Model/model_20_nos_score.yaml', scenario='no_heat') #this version only includes the power sector
 model_plan_0.run()
-#model_plan_0.to_netcdf('results_0.nc')
+model_plan_0.to_netcdf('results_0.nc')
 
 '''
 Extrapolation of relevant indicators
@@ -72,7 +72,7 @@ Model creation, run and saving to netCDF - NOS 1
 '''
 model_plan_1 = calliope.Model('Model/model_20_nos_score.yaml', scenario='no_heat,min_co2,max_cost5') #this version only includes the power sector
 model_plan_1.run()
-#model_plan_1.to_netcdf('results_1.nc')
+model_plan_1.to_netcdf('results_1.nc')
 
 '''
 Computation of nos_scores per location, and nos_overrides writing
@@ -107,13 +107,17 @@ Model creation and run - NOS 2:n
 nos_dict = {}
 cap_share_dict = {}
 cap_loc_score_dict = {}
+incremental_score = {}
+incremental_score[1] = cap_loc_score_1
+
 n = 4
 for j in range(2,(n+1)):
     nos_dict[j] = calliope.Model('Model/model_20_nos_score.yaml', scenario='no_heat,max_diff,max_cost10,nos')
     nos_dict[j].run()
     cap_loc_score_dict[j] = cap_loc_calc(nos_dict[j],model_plan_1)
-#    cap_share_dict[j] = cap_share_calc(nos_dict[j])
-    update_nos_score(cap_loc_score_dict[j])
+#   cap_share_dict[j] = cap_share_calc(nos_dict[j])
+    incremental_score[j] = cap_loc_score_dict[j].add(incremental_score[j-1])
+    update_nos_score(incremental_score[j])
 
     '''
     Extrapolation of relevant indicators

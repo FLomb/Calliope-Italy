@@ -4,7 +4,7 @@ overrides:
       R1:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -12,7 +12,7 @@ overrides:
       R10:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -36,7 +36,7 @@ overrides:
       R13:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -64,7 +64,7 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R17:
         techs:
           pv_farm:
@@ -76,7 +76,7 @@ overrides:
       R18:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -84,11 +84,11 @@ overrides:
       R2:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R3:
         techs:
           pv_farm:
@@ -96,7 +96,7 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R4:
         techs:
           pv_farm:
@@ -104,7 +104,7 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R5:
         techs:
           pv_farm:
@@ -112,7 +112,7 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R6:
         techs:
           pv_farm:
@@ -120,11 +120,11 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       R7:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -140,7 +140,7 @@ overrides:
       R9:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -148,15 +148,15 @@ overrides:
       SARD:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
       SICI:
         techs:
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
