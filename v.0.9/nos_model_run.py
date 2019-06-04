@@ -74,7 +74,7 @@ update_slack_costs(slacked_costs)
 '''
 Model creation, run and saving to netCDF - NOS 1
 '''
-model_plan_1 = calliope.Model('Model/model', scenario='battery_storage,no_heat,min_co2,max_cost1') #this version only includes the power sector
+model_plan_1 = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat,min_co2,max_cost1') #this version only includes the power sector
 model_plan_1.run()
 model_plan_1.to_netcdf('NetCDFs/results_1.nc')
 
