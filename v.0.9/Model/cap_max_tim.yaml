@@ -1,0 +1,163 @@
+overrides:
+  cap_max_tim:
+    locations:
+      R1:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 1517464.06997446
+          # pv_rooftop:
+            # constraints.energy_cap_max: 34648897.3431813
+          wind:
+            constraints.energy_cap_max: 12169015.1692964
+      R10:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 398900.607670727
+          # pv_rooftop:
+            # constraints.energy_cap_max: 10855894.4017453
+          wind:
+            constraints.energy_cap_max: 5573503.04880363
+      R11:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 53960422.0125893
+          # pv_rooftop:
+            # constraints.energy_cap_max: 53960422.0125893
+          wind:
+            constraints.energy_cap_max: 3612766.63118466
+      R12:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 25398837.9034457
+          # pv_rooftop:
+            # constraints.energy_cap_max: 25398837.9034457    
+          wind:
+            constraints.energy_cap_max: 5476244.09091471
+      R13:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 2452028.1843862
+          # pv_rooftop:
+            # constraints.energy_cap_max: 2452028.1843862     
+          wind:
+            constraints.energy_cap_max: 2625534.37325016
+      R14:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 21067611.5130538
+          # pv_rooftop:
+            # constraints.energy_cap_max: 21067611.5130538        
+          wind:
+            constraints.energy_cap_max: 12480339.8241904
+      R15:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 17654598.6042945
+          # pv_rooftop:
+            # constraints.energy_cap_max: 17654598.6042945        
+          wind:
+            constraints.energy_cap_max: 17600556.3050972
+      R16:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 31224743.1715213
+          # pv_rooftop:
+            # constraints.energy_cap_max: 31224743.1715213        
+          wind:
+            constraints.energy_cap_max: 13295804.381831
+      R17:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 6349542.57446439
+          # pv_rooftop:
+            # constraints.energy_cap_max: 6349542.57446439        
+          wind:
+            constraints.energy_cap_max: 761300
+      R18:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 19930.7738089189
+          # pv_rooftop:
+            # constraints.energy_cap_max: 713805.076626959        
+          wind:
+            constraints.energy_cap_max: 1025200
+      R2:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 1744915.86692725
+          # pv_rooftop:
+            # constraints.energy_cap_max: 2282106.18369471        
+          wind:
+            constraints.energy_cap_max: 6013665.12741172
+      R3:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 805395.94405038
+          # pv_rooftop:
+            # constraints.energy_cap_max: 24390964.0254636        
+          wind:
+            constraints.energy_cap_max: 4127431.05935907
+      R4:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 706101.250514889
+          # pv_rooftop:
+            # constraints.energy_cap_max: 11448172.2160329        
+          wind:
+            constraints.energy_cap_max: 1735055.15972388
+      R5:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 791136.884723083
+          # pv_rooftop:
+            # constraints.energy_cap_max: 11600230.5639555        
+          wind:
+            constraints.energy_cap_max: 10376352.3448683
+      R6:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 14305278.0934849
+          # pv_rooftop:
+            # constraints.energy_cap_max: 24661879.2935786        
+          wind:
+            constraints.energy_cap_max: 11544595.8466624
+      R7:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 1663462.03053475
+          # pv_rooftop:
+            # constraints.energy_cap_max: 29301431.6332234        
+          wind:
+            constraints.energy_cap_max: 10167837.227592
+      R8:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 401011.943585964
+          # pv_rooftop:
+            # constraints.energy_cap_max: 10289113.3364277        
+          wind:
+            constraints.energy_cap_max: 1333802.96223819
+      R9:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 1152.3864315705
+          # pv_rooftop:
+            # constraints.energy_cap_max: 8299457.84215594    
+          wind:
+            constraints.energy_cap_max: 854137.219128477
+      SARD:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 1095065.47546698
+          # pv_rooftop:
+            # constraints.energy_cap_max: 4859006.47155494        
+          wind:
+            constraints.energy_cap_max: 4523198.78769837
+      SICI:
+        techs:
+          # pv_farm:
+            # constraints.energy_cap_max: 651444.161490424
+          # pv_rooftop:
+            # constraints.energy_cap_max: 31070505.9871       
+          wind:
+            constraints.energy_cap_max: 2290506.05465218

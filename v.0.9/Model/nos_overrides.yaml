@@ -1,0 +1,283 @@
+overrides:
+  nos:
+    locations:
+      R1:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R10:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R11:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R12:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R13:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R14:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R15:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R16:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R17:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R18:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R2:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R3:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R4:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 1.0
+      R5:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R6:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R7:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R8:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      R9:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      SARD:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
+      SICI:
+        techs:
+          biofuel:
+            costs.nos_score.energy_cap: 0.0
+          biogas:
+            costs.nos_score.energy_cap: 0.0
+          biomass_wood:
+            costs.nos_score.energy_cap: 0.0
+          pv_farm:
+            costs.nos_score.energy_cap: 0.0
+          pv_rooftop:
+            costs.nos_score.energy_cap: 0.0
+          wind:
+            costs.nos_score.energy_cap: 0.0
