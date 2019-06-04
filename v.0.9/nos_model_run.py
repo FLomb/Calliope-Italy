@@ -120,8 +120,8 @@ cap_loc_score_dict = {}
 incremental_score = {}
 incremental_score[1] = cap_loc_score_1
 
-n = 2
-for j in range(5,(n+1)):
+n = 5
+for j in range(2,(n+1)):
     nos_dict[j] = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat,max_diff,max_cost5,nos,cap_max_tim')
     nos_dict[j].run()
     cap_loc_score_dict[j] = cap_loc_score(nos_dict[j],model_plan_1)
@@ -196,7 +196,7 @@ stop = '2015-04-05 23:00:00'
 
 power_plot(model_plan_0,start,stop)
 power_plot(model_plan_1,start,stop)
-for j in range(5,(n+m+1)):
+for j in range(2,(n+m+1)):
     power_plot(nos_dict[j],start,stop)
 #    per_loc_cap_plot(cap_per_loc_dict[j])
     horizontal_loc_cap_plot(cap_per_loc_dict[j])
