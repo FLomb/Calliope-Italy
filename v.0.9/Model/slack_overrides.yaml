@@ -1,7 +1,0 @@
-overrides:
-  max_cost1:
-    group_constraints.systemwide_max_slacked_cost.cost_max.monetary: 545833612.2837209
-  max_cost10:
-    group_constraints.systemwide_max_slacked_cost.cost_max.monetary: 594472251.0020722
-  max_cost5:
-    group_constraints.systemwide_max_slacked_cost.cost_max.monetary: 567450785.0474325

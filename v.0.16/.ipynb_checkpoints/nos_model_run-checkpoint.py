@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 
-calliope.set_log_level('ERROR') #sets the level of verbosity of Calliope's operations
+calliope.set_log_level('SOLVER') #sets the level of verbosity of Calliope's operations
 
 #%% 
 '''
@@ -37,7 +37,7 @@ Model creation, run and saving to netCDF - Iteration 0
 #model_base = calliope.Model('Model/model_20_base.yaml', scenario='no_heat') #this version only includes the power sector
 #model_base.run()
 
-model_plan_0 = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat') #this version only includes the power sector
+model_plan_0 = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat,cap_max_tim') #this version only includes the power sector
 model_plan_0.run()
 model_plan_0.to_netcdf('NetCDFs/results_0.nc')
 
@@ -161,23 +161,29 @@ update_nos_score(cap_loc_score_1)
 '''
 Model creation and run - NOS n+1:m
 '''
+nos_dict_2 = {}
+nos_dict_2[1] = model_plan_1
+cap_per_loc_dict_2 = {}
+cap_loc_score_dict_2 = {}
+incremental_score_2 = {}
+incremental_score_2[1] = cap_loc_score_1
 
 m = 5
-for j in range((n+1),(n+m+1)):
-    nos_dict[j] = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat,max_diff,max_cost5,nos,cap_max_tim')
-    nos_dict[j].run()
-    cap_loc_score_dict[j] = cap_loc_score_systemwide(nos_dict[j],model_plan_1)
+for j in range(2,(m+1)):
+    nos_dict_2[j] = calliope.Model('Model/model.yaml', scenario='battery_storage,no_heat,max_diff,max_cost5,nos,cap_max_tim')
+    nos_dict_2[j].run()
+    cap_loc_score_dict_2[j] = cap_loc_score_systemwide(nos_dict_2[j],model_plan_1)
 #    cap_loc_score_dict[j] = cap_loc_score_distributed(nos_dict[j],model_plan_1)
-    incremental_score[j] = cap_loc_score_dict[j].add(incremental_score[j-1])
-    update_nos_score(incremental_score[j])
-    cap_per_loc_dict[j] = cap_loc_calc(nos_dict[j])
+    incremental_score_2[j] = cap_loc_score_dict_2[j].add(incremental_score_2[j-1])
+    update_nos_score(incremental_score_2[j])
+    cap_per_loc_dict_2[j] = cap_loc_calc(nos_dict_2[j])
 
     '''
     Extrapolation of relevant indicators, and saving to NetCDFs
     '''
-    cost_list.append(nos_dict[j].get_formatted_array('cost').loc[{'costs': 'monetary'}].sum(['locs','techs']).to_pandas())
-    co2_list.append(nos_dict[j].get_formatted_array('cost').loc[{'costs': 'co2'}].sum(['locs','techs']).to_pandas())
-    nos_dict[j].to_netcdf('NetCDFs/results_nos_%d.nc' % j)
+    cost_list.append(nos_dict_2[j].get_formatted_array('cost').loc[{'costs': 'monetary'}].sum(['locs','techs']).to_pandas())
+    co2_list.append(nos_dict_2[j].get_formatted_array('cost').loc[{'costs': 'co2'}].sum(['locs','techs']).to_pandas())
+    nos_dict_2[j].to_netcdf('NetCDFs/results_nos_2_%d.nc' % j)
 
     '''
     Stopping criterion: when all locations have been explored
@@ -196,17 +202,15 @@ stop = '2015-04-05 23:00:00'
 
 power_plot(model_plan_0,start,stop)
 power_plot(model_plan_1,start,stop)
-for j in range(2,(n+m+1)):
+for j in range(2,(n+1)):
     power_plot(nos_dict[j],start,stop)
 #    per_loc_cap_plot(cap_per_loc_dict[j])
     horizontal_loc_cap_plot(cap_per_loc_dict[j])
-   
-'''
-Plotting the installed cap per location
-'''
-#for j in range(2,(n+1)):
+for jj in range(2,(m+1)):
+    power_plot(nos_dict_2[jj],start,stop)
 #    per_loc_cap_plot(cap_per_loc_dict[j])
-    
+    horizontal_loc_cap_plot(cap_per_loc_dict_2[jj]) 
+
 '''
 Performing deeper comparisons about installed caps in each loc
 '''

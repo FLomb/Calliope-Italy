@@ -150,7 +150,7 @@ overrides:
           biomass_wood:
             costs.nos_score.energy_cap: 0.0
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
@@ -182,7 +182,7 @@ overrides:
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:
-            costs.nos_score.energy_cap: 1.0
+            costs.nos_score.energy_cap: 0.0
       R5:
         techs:
           biofuel:
@@ -276,7 +276,7 @@ overrides:
           biomass_wood:
             costs.nos_score.energy_cap: 0.0
           pv_farm:
-            costs.nos_score.energy_cap: 0.0
+            costs.nos_score.energy_cap: 1.0
           pv_rooftop:
             costs.nos_score.energy_cap: 0.0
           wind:

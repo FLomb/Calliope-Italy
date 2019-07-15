@@ -1,0 +1,707 @@
+##
+# LOCATIONS VRES & P2H
+##
+
+locations:
+    ### Macro-region NORD - start
+    ## Macro-region NORD - sub-regions
+    # 01-Piemonte-start
+    R1:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 12150215 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 637419 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 34007142 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+        
+    # 01-Piemonte-end
+    
+    # 02-Val d'Aosta-start
+    R2:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 6011065 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 1743582 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 2261640  #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                    
+    # 02-Val d'Aosta-end
+    
+    # 03-Lombardia-start
+    R3:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 4127431 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 23167334 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                    
+    # 03-Lombardia-end
+    
+    # 04-Trentino Alto Adige-start
+    R4:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 1733055 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 598912 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 11142561 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                    
+    # 04-Trentino Alto Adige-end
+            
+    # 05-Veneto-start
+    R5:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 10366952 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 13116 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 10624251 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                    
+    # 05-Veneto-end
+
+    # 06-Friuli Venezia Giulia-start
+    R6:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 11544596 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 14103640 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 24358317 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                     
+    # 06-Friuli Venezia Giulia-end
+    
+    # 07-Liguria-start
+    R7:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 10109737 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 1631757 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 29236736 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0
+                    
+    # 07-Liguria-end
+    
+    # 08-Emilia Romagna-start
+    R8:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 1309103 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 9427785 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            battery:
+                constraints:
+                    energy_cap_min: 0                    
+        
+    # 08-Emilia Romagna-end
+    ## Macro-region NORD - sub-regions - end
+    ### Macro-region NORD - end
+    
+    ### Macro-region CNOR - start      
+    ## Macro-region CNOR - sub-regions - start
+    # 09-Toscana-start
+    R9:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 731637 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 7889472 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0     
+             
+    # 09-Toscana-end
+    
+    # 10-Umbria-start
+    R10:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 5571503 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 129054 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 10663841 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  300000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+                    
+    # 10-Umbria-end
+    
+    # 11-Marche-start
+    R11:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 3603667 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 53644080 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  300000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+                    
+    # 11-Marche-end
+    ## Macro-region CNOR - sub-regions - end
+    ### Macro-region CNOR - end
+    
+    ### Macro-region CSUD - start
+    ## Macro-region CSUD - sub-regions - start
+    # 12-Lazio-start
+    R12:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 5424444 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 62383 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 25033848 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+        
+    # 12-Lazio-end
+    
+    # 13-Abruzzo-start
+    R13:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 2363534 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 1346944 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 2243398 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+                    
+    # 13-Abruzzo-end
+    
+    # 14-Campania-start
+    R14:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 11162040 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 6059627 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 20772783 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+        
+    # 14-Campania-end
+    ## Macro-region CSUD - sub-regions - end
+    ### Macro-region CSUD - end
+    
+    ### Macro-region SUD
+    ## Macro-region SUD - sub-regions - start
+    # 15-Molise-start
+    R15:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 17228956 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 7838430 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 17610488 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0    
+         
+    # 15-Molise-end
+    
+    # 16-Puglia-start
+    R16:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 10936304 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 2583788 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 30747055 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  1000000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0   
+        
+    # 16-Puglia-end
+    
+    # 17-Basilicata-start
+    R17:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 211451 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 6253761 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  1000000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0   
+        
+    # 17-Basilicata-end
+    
+    # 18-Calabria-start
+    R18:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 483698 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  800000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0   
+        
+    # 18-Calabria-end
+    ## Macro-region SUD - sub-regions - end
+    ### Macro-region SUD - end
+    
+    ### Macro-region SICI/R19 - start
+    # 19-Sicilia-start
+    SICI:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 532906 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 0 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 30600340 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  1000000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+        
+    # 19-Sicilia-end
+    ### Macro-region SICI/R19 - end
+    
+    ### Macro-region SARD/R20 - start
+    # 20-Sardegna-start
+    SARD:
+        techs:
+            wind_new: 
+                constraints:
+                    resource: file=wind_series.csv 
+                    energy_cap_max: 3517699 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            pv_farm_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 628566 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW                        
+            pv_rooftop_new: 
+                constraints:                                    
+                    resource: file=pv_series.csv 
+                    energy_cap_max: 4599606 #kW
+                costs:
+                    nos_score:
+                        energy_cap: 0 # score/kW
+            phs_new: 
+                constraints:
+                    energy_cap_max:  1000000 #kW 
+            battery:
+                constraints:
+                    energy_cap_min: 0  
+        
+    # 20-Sardegna-end
+    ### Macro-region SARD/R20 - end
+    
+
+    
+##
+# TRANSMISSION CAPACITIES
+##
+links:
+    ## inter-zonal transmission - start
+    NORD,CNOR:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 1300000
+                costs.monetary:
+                    energy_cap: 450 #€/kW, elaborated from Terna
+    CNOR,CSUD:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 1300000
+                costs.monetary:
+                    energy_cap: 450 #€/kW, elaborated from Terna           
+    CNOR,SARD:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 300000
+                costs.monetary:
+                    energy_cap: 1660 #€/kW, elaborated from Terna   
+    CSUD,SARD:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 720000
+                costs.monetary:
+                    energy_cap: 750 #€/kW, elaborated from Terna                       
+    CSUD,SUD:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 4600000
+                costs.monetary:
+                    energy_cap: 450 #€/kW, elaborated from Terna                       
+    SUD,SICI:
+        techs:
+            inter_zonal_new:
+                constraints:
+                    energy_cap_max: 1100000
+                costs.monetary:
+                    energy_cap: 636 #€/kW, elaborated from Terna                       
+    
+    ## inter-zonal transmission - end
+
+    
