@@ -1,10 +1,10 @@
 # Calliope-Italy
-Calliope-based 20-node representation of the Italian electric energy system.
+Calliope-based 20-node representation of the Italian electric energy system, including both current and 2050 technological options.
+The model also features the possibility to generate spatially-explicit practically-optimal results (SPORES).
 
 ## Requirements
-Calliope version 0.6.3
+Calliope version 0.6.4-dev
 
-## Versions
-[Work in progress]
+## Italian 20-region energy system
 
-Current version is v.0.21. To run the model, use the nos_model_run.py script. The post_process.py script is instead aimed at picking the most interesting NOS among the large amount generated, yet, due to the rapid version updating, it is still not perfectly aligned with the latests changes in the other scripts and might not work as expected.
+<img src="https://github.com/FLomb/Calliope-Italy/blob/master/Italy%20map%2020-node.jpg" width="800">
