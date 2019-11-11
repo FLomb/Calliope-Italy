@@ -1,0 +1,27 @@
+##
+# Overrides for different example model configuratiions
+##
+overrides:
+    2050_eff:
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_2050_eff.csv
+
+    2050_lowgr:
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_2050_lowgr.csv
+
+    2050_IEA:
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_2050_IEA.csv

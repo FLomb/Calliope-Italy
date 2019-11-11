@@ -1,0 +1,493 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+# Note: '-start' and '-end' is used in tutorial documentation only
+
+techs:
+
+    dummy_tech:
+        essentials:
+            name: 'dummy tech'
+            parent: supply
+            carrier: electricity
+            lifetime: 1
+        constraints:
+            energy_cap_equals: 0   
+
+    ##
+    # Supply
+    ##
+    
+    # coal
+    coal:
+        essentials:
+            name: 'Coal plant traditional'
+            color: '#5A5A5A'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.38
+            energy_ramping: 0.6 # source: Pfenninger UK model
+            lifetime: 35
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.023  # €/kWh
+                om_annual: 32 # €/kW/year
+                om_con: 0.00946 # €/kWh
+            co2:
+                om_prod: 0.870 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # coal-end
+    
+    # coal USC
+    coal_usc:
+        essentials:
+            name: 'Coal plant USC'
+            color: '#8A6060'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.43 
+            energy_ramping: 0.6 # source: Pfenninger UK model
+            lifetime: 35
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.025  # €/kWh
+                om_annual: 35 # €/kW/year
+                om_con: 0.00946 # €/kWh
+            co2:
+                om_prod: 0.870 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # coal USC-end     
+    
+    # ccgt
+    ccgt:
+        essentials:
+            name: 'Combined cycle gas turbine'
+            color: '#A5A5A5'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.56
+            energy_ramping: 0.8 # source: Pfenninger UK model
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.00315  # €/kWh
+                om_annual: 10.5 # €/kW/year
+                om_con: 0.0291 # €/kWh
+            co2:
+                om_prod: 0.368 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # ccgt-end
+    
+    # waste-to-energy
+    wte:
+        essentials:
+            name: 'Waste-to-energy plant'
+            color: '#6A0241'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.28
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.03305  # €/kWh
+                om_annual: 677.5 # €/kW/year
+                om_con: -0.1305 # €/kWh, ricavi per smaltimento rifiuti
+            co2:
+                om_prod: 0.555 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # waste-to-energy-end
+    
+    # biomass wood
+    biomass_wood:
+        essentials:
+            name: 'Solid biomass power plant'
+            color: '#0E5801'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.15
+            energy_cap_min_use: 0.3
+            lifetime: 15
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.0118  # €/kWh
+                om_annual: 59 # €/kW/year
+                om_con: 0.15 # €/kWh
+            co2:
+                om_prod: 0.133 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # biomass wood-end
+    
+    # biogas
+    biogas:
+        essentials:
+            name: 'Biogas power plant'
+            color: '#5AA24D'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.36
+            energy_cap_min_use: 0.3
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.0184  # €/kWh
+                om_annual: 120 # €/kW/year
+                om_con: 0.04 # €/kWh             
+            co2:
+                om_prod: 0.133 # kgCO2/kWh, source: ISPRA 2018  
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0  
+    # biogas-end
+    
+    # biofuels
+    biofuel:
+        essentials:
+            name: 'Biofuel power plant'
+            color: '#78BF2D'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.36
+            energy_cap_min_use: 0.3
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.023  # €/kWh
+                om_annual: 30 # €/kW/year
+                om_con: 0.22 # €/kWh
+            co2:
+                om_prod: 0.133 # kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # biofuels-end
+    
+    # oil and other fossil
+    oil_&_other:
+        essentials:
+            name: 'Other fossil fuels plant'
+            color: '#000000'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.35 #assumption
+            energy_ramping: 0.6 #assumption
+            lifetime: 35 #assumption
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.023  # €/kWh
+                om_annual: 32 # €/kW/year
+                om_con: 0.01 # €/kWh assumption
+            co2:
+                om_prod: 0.549 #kgCO2/kWh, source: ISPRA 2018
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # oil and other fossil-end
+    
+    # geothermal
+    geothermal:
+        essentials:
+            name: 'Geothermal power plant'
+            color: '#873737'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            force_resource: False
+            lifetime: 50
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0.0188  # €/kWh
+                om_annual: 170 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # geothermal-end 
+    
+    # wind
+    wind:
+        essentials:
+            name: 'On-shore wind power'
+            color: '#47D154'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 38 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0             
+    # wind-end
+    
+    # pv farm
+    pv_farm:
+        essentials:
+            name: 'Photovoltaic power farm-scale'
+            color: '#F9FF2C'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 25
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 19 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0         
+    # pv farm-end
+        
+    # pv rooftop
+    pv_rooftop:
+        essentials:
+            name: 'Photovoltaic power distributed'
+            color: '#CCFF2C'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 20
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 27 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0         
+    # pv rooftop-end
+        
+    #hydro reservoir and basin type
+    hydro_dam:
+        essentials:
+            name: 'Hydroelectric power - reservoir and basin'
+            color: '#50A6D4'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            resource: file=hydro_reservoirs.csv
+            resource_unit: energy_per_cap
+            force_resource: False
+            resource_eff: 0.635
+            lifetime: 80
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_annual: 55 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    #hydro reservoir and basin type-end
+    
+    #hydro run-of-river
+    hydro_ror:
+        essentials:
+            name: 'Hydroelectric run-of-river power'
+            color: '#64D7CE'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            resource: file=hydro_reservoirs.csv
+            force_resource: False
+            resource_unit: energy_per_cap
+            energy_prod: True
+            resource_eff: 0.635
+            lifetime: 30
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_annual: 100 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    #hydro run-of-river-end
+    
+    # imports
+    el_import:  # Generic HVDC import technology
+        essentials:
+            name: 'Electricity import'
+            color: '#E68A31'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints: 
+            resource: 6e6 # infinite supply
+            resource_cap_equals: 6e6 # infinite supply
+            energy_cap_equals: 6e6 # infinite supply
+            force_resource: False
+            energy_prod: True
+            resource_eff: 1
+            lifetime: 40
+        costs:
+            monetary:
+                om_prod: 0.063 # average (years 2004-2018) price on the Italian market according to GSE data
+            co2:
+                om_prod: 0.012 # adapted from Pfenninger, Calliope UK
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # imports-end
+    
+    ##
+    # Storage
+    ##
+    # pumped-hydro storage
+    phs:
+        essentials:
+            name: 'PHS storage'
+            color: '#4875A0'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_eff: 0.87  # 0.87 * 0.97 = 0.75 round-trip efficiency
+            storage_loss: 0  # No loss over time assumed
+            lifetime: 50
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0  # €/kW
+                om_annual: 48 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # pumped-hydro storage-end
+        
+    ##
+    # Transmission
+    ##
+    
+    # inter-zonal
+    inter_zonal:  # Generic HVAC inter-zonal transmission technology
+        essentials:
+            name: 'Transmission intra-zonal electricity'
+            color: '#966F9E'
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_eff: 0.96
+            lifetime: 40
+        costs:
+            monetary:
+                interest_rate: 0.1
+                om_prod: 0.0022  # €/kWh, adapted from Calliope-UK
+            co2:
+                om_prod: 0.0001 # dummy cost to avoid weird transmission behaviour
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # inter-zonal-end
+    
+    # free intra-zonal
+    free_transmission:  # Generic HVAC intra-zonal transmission technology
+        essentials:
+            name: 'Free transmission intra-zonal electricity'
+            color: '#AA9EAD'
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_cap_equals: 1e8 #100GW i.e. inf
+            energy_eff: 1.0
+        costs:
+            monetary:
+                om_prod: 0  # €/kWh         
+    # free intra-zonal-end
+    
+    ##
+    # Demand
+    ##
+
+    # el_demand-start
+    demand_power:
+        essentials:
+            name: 'Power demand'
+            color: '#072486'
+            parent: demand
+            carrier: electricity
+    # el_demand-end
+   
+    # export
+    el_export:  
+        essentials:
+            name: 'Electricity export'
+            color: '#E68A31'
+            parent: demand
+            carrier_in: electricity
+        constraints:
+            force_resource: False
+            resource: -6e6 # infinite sink
+        costs:
+            monetary:
+                om_con: -0.063 # average (years 2004-2018) price on the Italian market according to GSE data
+    # export-end
+    
+    # curtailment
+    el_curtailment:  
+        essentials:
+            name: 'Electricity curtailment'
+            color: '#E68A31'
+            parent: demand
+            carrier_in: electricity
+        constraints:
+            resource: -1e+8
+            force_resource: False
+        costs:
+            monetary:
+                om_con: 0
+    # curtailment-end
