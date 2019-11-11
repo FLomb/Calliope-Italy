@@ -7,4 +7,4 @@ Calliope version 0.6.4-dev
 
 ## Italian 20-region energy system
 
-<img src="https://github.com/FLomb/Calliope-Italy/blob/master/Italy%20map%2020-node.jpg" width="800">
+<img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="800">
