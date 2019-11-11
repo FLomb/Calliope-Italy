@@ -8,7 +8,7 @@ A script to run and post-process the Italy Calliope 20-node model based on a NOS
 """
 #%% Initialisation
 import calliope
-from nos_utils import cap_loc_score_potential, cap_loc_calc, update_nos_score_params, update_excl_score_params
+from spores_utils import cap_loc_score_potential, cap_loc_calc, update_nos_score_params, update_excl_score_params
 import numpy as np
 import calliope.core.io
 import os
