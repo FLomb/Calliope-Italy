@@ -8,3 +8,6 @@ Calliope version 0.6.4-dev
 ## Italian 20-region energy system
 
 <img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="800">
+
+## Citing
+If you use the Italian model or the related data, please cite the associated publication: "[...]"
