@@ -1,6 +1,6 @@
 # Calliope-Italy
 Calliope-based 20-node representation of the Italian electric energy system, including both current and 2050 technological options.
-The model also features the possibility to generate spatially-explicit practically-optimal results (SPORES).
+The model also features the possibility to generate *spatially-explicit practically-optimal results* (SPORES).
 
 ## Requirements
 The model is built on the Python-based open-source energy modelling framework Calliope, version 0.6.4. 
@@ -19,4 +19,4 @@ To run the model over a week of data for testing:
 <img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="600">
 
 ## Citing
-If you use the Italian model or the related data, please cite the associated publication: "Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Spatially explicit practically optimal results in a fully decarbonised energy system, *Unpublished* "
+If you use the Italian model or the related data, please cite the associated publication: "*Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Spatially explicit practically optimal results in a fully decarbonised energy system, Unpublished* "
