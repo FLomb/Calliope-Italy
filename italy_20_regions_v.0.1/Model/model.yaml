@@ -33,6 +33,7 @@ run:
         Crossover: -0
         BarConvTol: 1e-4
         BarHomogeneous: 1
+        BarIterLimit: 4000
         OptimalityTol: 1e-4
         FeasibilityTol: 1e-4
 
