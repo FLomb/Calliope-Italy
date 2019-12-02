@@ -1,5 +1,5 @@
 # Calliope-Italy
-Calliope-based 20-node representation of the Italian electric energy system, including both current and 2050 technological options.
+Calliope-based 20-region representation of the Italian electric energy system, including both current and 2050 technological options.
 The model also features the possibility to generate *spatially-explicit practically-optimal results* (SPORES).
 
 ## Requirements
