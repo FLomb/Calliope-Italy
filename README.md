@@ -18,6 +18,11 @@ To run the model over a week of data for testing:
 
 <img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="600">
 
+## Author
+Francesco Lombardi
+E-mail: francesco.lombardi@polimi.it
+Politecnico di Milano, SESAM Group (http://sesam.polimi.it)
+
 ## Citing
 If you use the Italian model or the related data, please cite the associated publication: "*Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Spatially explicit practically optimal results in a fully decarbonised energy system, Unpublished* "
 
