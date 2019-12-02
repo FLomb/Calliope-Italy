@@ -3,11 +3,20 @@ Calliope-based 20-node representation of the Italian electric energy system, inc
 The model also features the possibility to generate spatially-explicit practically-optimal results (SPORES).
 
 ## Requirements
-Calliope version 0.6.4-dev
+The model is built on the Python-based open-source energy modelling framework Calliope, version 0.6.4. 
+
+To run the model, it is recommended to follow the [instructions for installing Calliope](https://calliope.readthedocs.io/en/stable/user/installation.html).
+
+## Overview
+All input data are and model specification are in the Model folder. In particular, timeseries data are in the 'timeseries_data' sub-folder, whilst location and tech specifications are the 'model_config' sub-folder.
+
+To run the model over a week of data for testing:
+- select the 'subset_time' of interest in the model.yaml file
+- run the spores_model_run.py file
 
 ## Italian 20-region energy system
 
-<img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="800">
+<img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="600">
 
 ## Citing
-If you use the Italian model or the related data, please cite the associated publication: "[...]"
+If you use the Italian model or the related data, please cite the associated publication: "Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Spatially explicit practically optimal results in a fully decarbonised energy system, *Unpublished* "
