@@ -36,7 +36,19 @@ def cap_loc_calc(model, techs=['tech1','tech2']):
     cap_per_loc = model.get_formatted_array('energy_cap').loc[{'techs':techs}].to_pandas()
     
     return(cap_per_loc)
+
+'''
+Calculation of the energy produced/consumed in each location  
+'''
+def energy_loc_calc(model, techs=['tech1','tech2']):
+    energy_per_loc = model.get_formatted_array('carrier_prod').loc[{'carriers':'electricity', 'techs':techs}].sum('timesteps').to_pandas()
     
+    return(energy_per_loc)
+    
+def energycon_loc_calc(model, techs=['tech1','tech2']):
+    energycon_per_loc = model.get_formatted_array('carrier_con').loc[{'carriers':'electricity', 'techs':techs}].sum('timesteps').to_pandas()
+    
+    return(energycon_per_loc)       
 '''
 Updating backend nos_score parameters  
 '''    
@@ -61,5 +73,3 @@ def update_excl_score_params(model, tech, cap_per_loc, value):
             model.backend.update_param('cost_energy_cap', {('excl_score',('{}::{}'.format(j,tech))) : value})
         except:
             continue
-            
-            
