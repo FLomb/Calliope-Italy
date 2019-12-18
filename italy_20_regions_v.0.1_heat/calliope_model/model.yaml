@@ -2,8 +2,7 @@ import:  # Import other files from paths relative to this file, or absolute path
     - 'model_config/techs.yaml'  # This file specifies the model's technologies
     - 'model_config/locations.yaml'  # This file specifies the model's locations
     - 'overrides.yaml' # This import overrides
-    - 'cap_max_tim.yaml'  # This importes the cap_max_per_loc as defined by Tim
-        
+
 # Model configuration: all settings that affect the built model
 model:
     name: Italy energy system 6-20 nodes

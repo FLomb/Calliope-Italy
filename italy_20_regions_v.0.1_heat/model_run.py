@@ -17,7 +17,7 @@ os.chdir('calliope_model')
 calliope.set_log_verbosity('INFO') #sets the level of verbosity of Calliope's operations
 
 #%% Model creation and run
-model = calliope.Model('model/model.yaml', scenario='no_heat')
+model = calliope.Model('model.yaml', scenario='no_heat')
 model.run()
 
 #%% Saving model results to netCDF and to CSVs
