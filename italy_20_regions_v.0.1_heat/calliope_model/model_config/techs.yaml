@@ -5,6 +5,15 @@
 # Note: '-start' and '-end' is used in tutorial documentation only
 
 techs:
+    
+    dummy_tech:
+        essentials:
+            name: 'dummy tech'
+            parent: supply
+            carrier: electricity
+            lifetime: 1
+        constraints:
+            energy_cap_equals: 0   
 
     ##
     # Conversion
@@ -22,8 +31,6 @@ techs:
             carrier_in: electricity
             lifetime: 20
         constraints:
-            #energy_cap_max: inf  #
-            #energy_eff: 3
             lifetime: 20
         costs.monetary:
             interest_rate: 0.10
@@ -362,25 +369,8 @@ techs:
     ##
     # Transmission
     ##
-    # imports
-    el_import:  # Generic HVDC import technology
-        essentials:
-            name: 'Electricity import'
-            color: '#E68A31'
-            parent: supply_plus
-            carrier_out: electricity
-        constraints:
-            #resource: 5392000
-            force_resource: False
-            #energy_cap_equals: 5392000
-            #resource_cap_equals:  5392000 #0.8*6740000
-            energy_prod: True
-            resource_eff: 1
-            lifetime: 100
-        costs:
-            monetary:
-                om_prod: 0.04  # wholesale price EU from Pfenninger UK, in line with Terna - Piani di Sviluppo
-                
+    
+    
     # inter-zonal
     inter_zonal:  # Generic HVAC inter-zonal transmission technology
         essentials:
@@ -389,16 +379,19 @@ techs:
             parent: transmission
             carrier: electricity
         constraints:
-            energy_eff: 1
-            # force_asynchronous_prod_con: True
+            energy_eff: 0.96
+            lifetime: 40
         costs:
             monetary:
-                om_prod: 0.013  # €/kWh, adapted from Calliope-UK
+                interest_rate: 0.1
+                om_prod: 0.0022  # €/kWh, adapted from Calliope-UK
             co2:
-                om_prod: 0.0001 #dummy cost to avoid weird transmission behaviour
-            ghost_cost:
-                om_prod: 0.013
-                
+                om_prod: 0.0001 # dummy cost to avoid weird transmission behaviour
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # inter-zonal-end
+    
     # free intra-zonal
     free_transmission:  # Generic HVAC intra-zonal transmission technology
         essentials:
@@ -407,12 +400,12 @@ techs:
             parent: transmission
             carrier: electricity
         constraints:
-            energy_cap_equals: 100000000 #100GW i.e. inf
+            energy_cap_equals: 1e8 #100GW i.e. inf
             energy_eff: 1.0
         costs:
             monetary:
-                om_prod: 0  # €/kWh
-                
+                om_prod: 0  # €/kWh         
+    # free intra-zonal-end      
                             
     ##
     # Demand
@@ -446,9 +439,10 @@ techs:
             carrier_in: electricity
         constraints:
             force_resource: False
+            resource: -6e6 # infinite sink
         costs:
             monetary:
-                om_con: -0.04  # wholesale price EU from Pfenninger UK, in line with Terna - Piani di Sviluppo
+                om_con: -0.063 # average (years 2004-2018) price on the Italian market according to GSE data
     # export-end
     
     # curtailment
@@ -459,9 +453,9 @@ techs:
             parent: demand
             carrier_in: electricity
         constraints:
-            resource: -10e+12
+            resource: -1e+8
             force_resource: False
         costs:
             monetary:
-                om_con: +0.04  # wholesale price EU from Pfenninger UK, in line with Terna - Piani di Sviluppo
-    # export-end
+                om_con: 0
+    # curtailment-end

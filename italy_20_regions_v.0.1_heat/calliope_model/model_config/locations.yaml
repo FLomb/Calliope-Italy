@@ -3,23 +3,64 @@
 ##
 
 locations:
+    ### Neighbouring countries - start
+    # FR - France - start
+    FR:
+        techs:
+            el_import: # import electricity from FR to ITA
+            el_export: # export excess electricity from ITA to FR
+        coordinates: {lat: 44.653819, lon: 6.465166}  
+    # FR - France - end
+    
+    #CH - Switzerland - start
+    CH:
+        techs:
+            el_import: # import electricity from CH to ITA
+            el_export: # export excess electricity from ITA to CH
+        coordinates: {lat: 46.382945, lon: 8.756699}  
+    #CH - Switzerland - end
+    
+    #AT - Austria - start
+    AT:
+        techs:
+            el_import: # import electricity from AS to ITA
+            el_export: # export excess electricity from ITA to AS
+        coordinates: {lat: 47.227596, lon: 11.384870}  
+    #AT - Austria - end
+    
+    #SI - Slovenia - start
+    SI:
+        techs:
+            el_import: # import electricity from SI to ITA
+            el_export: # export excess electricity from ITA to SI
+        coordinates: {lat: 46.072433, lon: 14.132276}  
+    #SI - Slovenia - end
+        
+    #GR - Greece - start
+    GR:
+        techs:
+            el_import: # import electricity from SI to ITA
+            el_export: # export excess electricity from ITA to SI
+        coordinates: {lat: 39.430745, lon: 20.610642}  
+    #GR - Greece - end                    
+    ### Neighbouring countries - end
+
     ### Macro-region NORD - start
     NORD:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 20000000 #kW, i.e. 20 GW  
+                    energy_cap_max: 20000000 #kW, i.e. 20 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 7361600 #kW
-                    # resource_area_max: 7361600
             hydro_ror:
                 constraints:
                     energy_cap_equals: 3830000 #kW
-                    # resource_area_max: 3830000
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv
+                    resource: file=regional_demand_fullTerna.csv
+            dummy_tech:         
         coordinates: {lat: 45.219847, lon: 9.624722}  
             
 
@@ -55,26 +96,7 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 197700 #kW 
-            el_import:
-                constraints:
-                    resource: 1000000
-                    energy_cap_equals: 1000000 #kW
-                    resource_cap_equals:  1000000 #
-            ashp:
-                constraints:
-                    energy_cap_equals: 1584290 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 10048242 #kWh
-                    energy_cap_equals: 1584290 #kW
-            el_export:
-                constraints:
-                    resource: -1000000
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 45.070290, lon: 7.682126}  
         
     # 01-Piemonte-end
@@ -93,7 +115,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 20500 #kW                  
+                    energy_cap_equals: 20500 #kW                 
             wte:
                 constraints:
                     energy_cap_equals: 32700 #kW
@@ -106,20 +128,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 2200 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 45723 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 289992 #kWh
-                    energy_cap_equals: 45723 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 45.734799, lon: 7.312156}
         
     # 02-Val d'Aosta-end
@@ -138,7 +149,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 1223600 #kW                  
+                    energy_cap_equals: 1223600 #kW
             phs: 
                 constraints:
                     energy_cap_equals:  2676500 #kW 
@@ -155,26 +166,7 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 591800 #kW 
-            el_import:
-                constraints:
-                    resource: 1800000
-                    energy_cap_equals: 1800000
-                    resource_cap_equals:  1800000 #
-            ashp:
-                constraints:
-                    energy_cap_equals: 2367050 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 15012838 #kWh
-                    energy_cap_equals: 2367050 #kW, i.e. 30% charge rate
-            el_export:
-                constraints:
-                    resource: -1800000
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 45.856052, lon: 9.396109} 
  
     # 03-Lombardia-end
@@ -210,26 +202,7 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 22900 #kW 
-            el_import:
-                constraints:
-                    resource: 100000
-                    energy_cap_equals: 100000
-                    resource_cap_equals:  100000 #
-            ashp:
-                constraints:
-                    energy_cap_equals: 148707 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 943162 #kWh
-                    energy_cap_equals: 148707 #kW
-            el_export:
-                constraints:
-                    resource: -100000
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 46.073988, lon: 11.121034}   
  
     # 04-Trentino Alto Adige-end
@@ -248,7 +221,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 976000 #kW                               
+                    energy_cap_equals: 976000 #kW              
             phs: 
                 constraints:
                     energy_cap_equals: 206800 #kW 
@@ -265,20 +238,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 214000 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 519070 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3293163 #kWh
-                    energy_cap_equals: 519070 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 45.437532, lon: 10.994262}    
  
     # 05-Veneto-end
@@ -297,7 +259,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 303600 #kW                                     
+                    energy_cap_equals: 303600 #kW                
             wte:
                 constraints:
                     energy_cap_equals: 9900 #kW
@@ -310,26 +272,7 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 68300 #kW 
-            el_import:
-                constraints:
-                    resource: 700000
-                    energy_cap_equals: 700000
-                    resource_cap_equals:  700000 #
-            ashp:
-                constraints:
-                    energy_cap_equals: 237178 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 1504281 #kWh
-                    energy_cap_equals: 237178 #kW
-            el_export:
-                constraints:
-                    resource: -700000
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 46.181871, lon: 13.263686}  
         
     # 06-Friuli Venezia Giulia-end
@@ -348,27 +291,16 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 64700 #kW                 
+                    energy_cap_equals: 64700 #kW            
             biogas:
                 constraints:
                     energy_cap_equals: 1200 #kW 
             biofuel:
                 constraints:
                     energy_cap_equals: 29100 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 491291 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3115975 #kWh
-                    energy_cap_equals: 491291 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 44.405555, lon: 8.939465}   
         
     # 07-Liguria-end
@@ -387,7 +319,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 861300 #kW                 
+                    energy_cap_equals: 861300 #kW                
             phs: 
                 constraints:
                     energy_cap_equals:  325600 #kW 
@@ -404,20 +336,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 264300 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 539917 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3424385 #kWh
-                    energy_cap_equals: 539917 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 44.495152, lon: 11.339577}  
         
     # 08-Emilia Romagna-end
@@ -429,18 +350,17 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2000000 #kW, i.e. 2 GW  
+                    energy_cap_max: 2000000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 790900 #kW
-                    # resource_area_max: 790900
             hydro_ror:
                 constraints:
                     energy_cap_equals: 310000 #kW
-                    # resource_area_max: 310000
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv
+                    resource: file=regional_demand_fullTerna.csv
+            dummy_tech:
         coordinates: {lat: 43.460750, lon: 11.861967}    
          
     ## Macro-region CNOR - sub-regions - start
@@ -449,7 +369,7 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 1280000 #kW
+                    energy_cap_max: 1280000 #kW
             geothermal:
                 constraints:
                     resource: 768000
@@ -478,20 +398,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 95600 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 594948 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3773414 #kWh
-                    energy_cap_equals: 594948 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 43.770988, lon: 11.245764}  
              
     # 09-Toscana-end
@@ -501,7 +410,7 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_equals: 150000 #kW
+                    energy_cap_max: 150000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -523,20 +432,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 24400 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 122643 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 777856 #kWh
-                    energy_cap_equals: 122643 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 43.070978, lon: 12.619476}  
         
     # 10-Umbria-end
@@ -555,7 +453,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 316300 #kW               
+                    energy_cap_equals: 316300 #kW                   
             wte:
                 constraints:
                     energy_cap_equals: 900 #kW
@@ -565,20 +463,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 36800 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 120041 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 761350 #kWh
-                    energy_cap_equals: 120041 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 43.535521, lon: 13.242770}   
                     
     # 11-Marche-end
@@ -590,18 +477,17 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW  
+                    energy_cap_max: 8800000 #kW, i.e. 8.8 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 563400 #kW
-                    # resource_area_max: 563400
             hydro_ror:
                 constraints:
                     energy_cap_equals: 490000 #kW
-                    # resource_area_max: 490000
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv
+                    resource: file=regional_demand_fullTerna.csv
+            dummy_tech:
         coordinates: {lat: 41.634090, lon: 13.335471} 
         
     ## Macro-region CSUD - sub-regions - start
@@ -610,7 +496,7 @@ locations:
         techs:
             coal_usc:
                 constraints:
-                    energy_cap_equals: 1845000 #kW
+                    energy_cap_max: 1845000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -622,7 +508,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 365000 #kW                
+                    energy_cap_equals: 365000 #kW             
             wte:
                 constraints:
                     energy_cap_equals: 54200 #kW
@@ -635,20 +521,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 86100 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 1725361 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 10942971 #kWh
-                    energy_cap_equals: 1725361 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 41.902775, lon: 12.509888}  
         
     # 12-Lazio-end
@@ -667,7 +542,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 208600 #kW                 
+                    energy_cap_equals: 208600 #kW               
             phs: 
                 constraints:
                     energy_cap_equals:  579200 #kW 
@@ -681,20 +556,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 16500 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 146214 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 927352 #kWh
-                    energy_cap_equals: 146214 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 42.351498, lon: 14.146327} 
         
     # 13-Abruzzo-end
@@ -713,7 +577,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 294800 #kW                   
+                    energy_cap_equals: 294800 #kW                 
             phs: 
                 constraints:
                     energy_cap_equals:  1102400 #kW 
@@ -730,20 +594,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 20000 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 929256 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 5893735 #kWh
-                    energy_cap_equals: 929256 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 40.855620, lon: 14.273227}  
         
     # 14-Campania-end
@@ -755,18 +608,17 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW  
+                    energy_cap_max: 8800000 #kW, i.e. 8.8 GW                   
             hydro_dam:
                 constraints:
                     energy_cap_equals: 686700 #kW
-                    # resource_area_max: 686700
             hydro_ror:
                 constraints:
                     energy_cap_equals: 260000 #kW
-                    # resource_area_max: 260000
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv              
+                    resource: file=regional_demand_fullTerna.csv
+            dummy_tech:
         coordinates: {lat: 40.678274, lon: 16.597098} 
     
     ## Macro-region SUD - sub-regions - start
@@ -784,7 +636,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 44100 #kW                 
+                    energy_cap_equals: 44100 #kW             
             wte:
                 constraints:
                     energy_cap_equals: 13600 #kW
@@ -797,20 +649,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 6500 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 49205 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 312080 #kWh
-                    energy_cap_equals: 49205 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 41.578717, lon: 14.659385}   
          
     # 15-Molise-end
@@ -820,7 +661,7 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_equals: 3060000 #kW
+                    energy_cap_max: 3060000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -832,7 +673,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 477700 #kW                  
+                    energy_cap_equals: 477700 #kW         
             wte:
                 constraints:
                     energy_cap_equals: 13300 #kW
@@ -845,20 +686,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 17100 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 561532 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3561477 #kWh
-                    energy_cap_equals: 561532 #kW
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 40.352813, lon: 18.169182} 
         
     # 16-Puglia-end
@@ -877,7 +707,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 95800 #kW                  
+                    energy_cap_equals: 95800 #kW                
             wte:
                 constraints:
                     energy_cap_equals: 2900 #kW
@@ -890,20 +720,9 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 10600 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 116919 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 741550 #kWh
-                    energy_cap_equals: 116919 #kW   
             #el_import:
             #el_export:
             el_curtailment:
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
         coordinates: {lat: 40.647472, lon: 15.804026} 
         
     # 17-Basilicata-end
@@ -913,7 +732,7 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 1738000 #kW
+                    energy_cap_max: 1738000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -925,7 +744,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv 
-                    energy_cap_equals: 230100 #kW                   
+                    energy_cap_equals: 230100 #kW          
             wte:
                 constraints:
                     energy_cap_equals: 2900 #kW
@@ -938,25 +757,7 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 10600 #kW
-            ashp:
-                constraints:
-                    energy_cap_equals: 482209 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 3058375 #kWh
-                    energy_cap_equals: 482209 #kW
-            el_import:
-                constraints:
-                    resource: 500000
-                    energy_cap_equals: 500000
-                    resource_cap_equals:  500000 #
-            el_export:
-                constraints:
-                    resource: -500000
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
+            el_curtailment:
         coordinates: {lat: 39.279639, lon: 16.255107} 
         
     # 18-Calabria-end
@@ -969,18 +770,16 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2000000 #kW, i.e. 2 GW  
+                    energy_cap_max: 2000000 #kW, i.e. 2 GW
             hydro_dam:
                 constraints:
                     energy_cap_equals: 15800 #kW
-                    # resource_area_max: 15800
             hydro_ror:
                 constraints:
                     energy_cap_equals: 130000 #kW
-                    # resource_area_max: 130000
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 530000 #kW
+                    energy_cap_max: 530000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv
@@ -992,7 +791,7 @@ locations:
             pv_rooftop: 
                 constraints:                                    
                     resource: file=pv_series.csv
-                    energy_cap_equals: 470200 #kW                 
+                    energy_cap_equals: 470200 #kW               
             phs: 
                 constraints:
                     energy_cap_equals:  573700 #kW 
@@ -1006,23 +805,12 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 27700 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 831299 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 5272448 #kWh
-                    energy_cap_equals: 831299 #kW
             #el_import:
             #el_export:
             el_curtailment:
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv
+                    resource: file=regional_demand_fullTerna.csv
         coordinates: {lat: 37.511642, lon: 15.085379} 
         
     # 19-Sicilia-end
@@ -1034,21 +822,19 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_equals: 2400000 #kW, i.e. 2 GW  
+                    energy_cap_max: 2400000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 183800 #kW
-                    # resource_area_max: 183800 
             hydro_ror:
                 constraints:
                     energy_cap_equals: 40000 #kW
-                    # resource_area_max: 40000
             coal:
                 constraints:
-                    energy_cap_equals: 1072000 #kW
+                    energy_cap_max: 1072000 #kW
             oil_&_other:
                 constraints:
-                    energy_cap_equals: 320000 #kW
+                    energy_cap_max: 320000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -1077,23 +863,12 @@ locations:
             biofuel:
                 constraints:
                     energy_cap_equals: 16400 #kW 
-            ashp:
-                constraints:
-                    energy_cap_equals: 852245 #kW
-                    energy_eff: file=cop_regions.csv
-            tes:    
-                constraints:
-                    storage_cap_equals: 5405298 #kWh
-                    energy_cap_equals: 852245 #kW
             #el_import:
             #el_export:
             el_curtailment:
             demand_power:
                 constraints:
-                    resource: file=regional_demand.csv
-            demand_heat:
-                constraints:
-                    resource: file=demand_heat.csv                    
+                    resource: file=regional_demand_fullTerna.csv                 
         coordinates: {lat: 40.302551, lon: 9.319396} 
         
     # 20-Sardegna-end
@@ -1115,28 +890,52 @@ links:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_equals: 1300000
+                    energy_cap_equals: 1300000       
     CNOR,SARD:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_equals: 300000
+                    energy_cap_equals: 300000  
     CSUD,SARD:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_equals: 720000
+                    energy_cap_equals: 720000                     
     CSUD,SUD:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_equals: 4600000
+                    energy_cap_equals: 4600000                    
     SUD,SICI:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_equals: 1100000
-    
+                    energy_cap_equals: 1100000                  
+    FR,R1:
+        techs:
+            inter_zonal:
+                constraints:
+                    energy_cap_max: 3200000 #kW
+    CH,R3:
+        techs:
+            inter_zonal:
+                constraints:
+                    energy_cap_max: 4200000 #kW
+    AT,R4:
+        techs:
+            inter_zonal:
+                constraints:
+                    energy_cap_max: 300000 #kW
+    SI,R6:
+        techs:
+            inter_zonal:
+                constraints:
+                    energy_cap_max: 700000 #kW
+    GR,R16:
+        techs:
+            inter_zonal:
+                constraints:
+                    energy_cap_max: 500000 #kW
     ## inter-zonal transmission - end
     
     ## intra-zonal free transmission - start

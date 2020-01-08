@@ -3,207 +3,257 @@
 ##
 overrides: 
 
-    battery_storage:
-              
-        locations.R1:
-            techs.battery.exists: true
-        locations.R2:
-            techs.battery.exists: true
-        locations.R3:
-            techs.battery.exists: true
-        locations.R4:
-            techs.battery.exists: true
-        locations.R5:
-            techs.battery.exists: true
-        locations.R6:
-            techs.battery.exists: true
-        locations.R7:
-            techs.battery.exists: true
-        locations.R8:
-            techs.battery.exists: true
-        locations.R9:
-            techs.battery.exists: true
-        locations.R10:
-            techs.battery.exists: true
-        locations.R11:
-            techs.battery.exists: true
-        locations.R12:
-            techs.battery.exists: true
-        locations.R13:
-            techs.battery.exists: true
-        locations.R14:
-            techs.battery.exists: true
-        locations.R15:
-            techs.battery.exists: true
-        locations.R16:
-            techs.battery.exists: true
-        locations.R17:
-            techs.battery.exists: true
-        locations.R18:
-            techs.battery.exists: true
-        locations.SICI:
-            techs.battery.exists: true
-        locations.SARD:
-            techs.battery.exists: true
-
-
-    no_heat:
-        model.name: Removed heat-pumps and DHW loads
+    power_to_heat:
+        model.name: Adding heat-pumps, thermal storages and DHW loads
         
-        locations.NORD.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
-        locations.CNOR.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
-        locations.CSUD.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
-        locations.SUD.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
-        locations.SARD.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
-        locations.SICI.techs.demand_power.constraints.resource: file=regional_demand_fullTerna.csv
+        locations.NORD.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=regional_demand_noboiler.csv
         
-        techs.ashp.exists: false
-        techs.tes.exists: false
-        techs.demand_heat.exists: false
+        techs.ashp.exists: true
+        techs.tes.exists: true
+        techs.demand_heat.exists: true
         
         locations.R1:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R2:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R3:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R4:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R5:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R6:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R7:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R8:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R9:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R10:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R11:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R12:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R13:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R14:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R15:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R16:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R17:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.R18:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.SICI:
-            techs.ashp.exists: false
-            techs.tes.exists: false
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
+            techs.tes.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
         locations.SARD:
-            techs.ashp.exists: false
-            techs.tes.exists: false
-
-    smaller_storage:
-        model.name: Smaller storage based on ICCEP
-
-        locations.R1:
+            techs.ashp.exists: true
+            techs.ashp.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions.csv
+            techs.tes.exists: true
             techs.tes.constraints:
-                storage_cap_equals: 1168491 #kWh
-                energy_cap_equals: 558285 #kW
-        locations.R2:
-            techs.tes.constraints:
-                storage_cap_equals: 5629814 #kWh
-                energy_cap_equals: 2689830 #kW
-        locations.R3:
-            techs.tes.constraints:
-                storage_cap_equals: 3768091 #kWh
-                energy_cap_equals: 1800330 #kW
-        locations.R4:
-            techs.tes.constraints:
-                storage_cap_equals: 108747 #kWh
-                energy_cap_equals: 51958 #kW
-        locations.R5:
-            techs.tes.constraints:
-                storage_cap_equals: 1284144 #kWh
-                energy_cap_equals: 613543 #kW
-        locations.R6:
-            techs.tes.constraints:
-                storage_cap_equals: 564105 #kWh
-                energy_cap_equals: 269520 #kW
-        locations.R7:
-            techs.tes.constraints:
-                storage_cap_equals: 353686 #kWh
-                energy_cap_equals: 168985 #kW
-        locations.R8:
-            techs.tes.constraints:
-                storage_cap_equals: 1234561 #kWh
-                energy_cap_equals: 589853 #kW
-        locations.R9:
-            techs.tes.constraints:
-                storage_cap_equals: 4103614 #kWh
-                energy_cap_equals: 1960638 #kW
-        locations.R10:
-            techs.tes.constraints:
-                storage_cap_equals: 285506 #kWh
-                energy_cap_equals: 136410 #kW
-        locations.R11:
-            techs.tes.constraints:
-                storage_cap_equals: 1415030 #kWh
-                energy_cap_equals: 676078 #kW
-        locations.R12:
-            techs.tes.constraints:
-                storage_cap_equals: 291696 #kWh
-                energy_cap_equals: 139368 #kW
-        locations.R13:
-            techs.tes.constraints:
-                storage_cap_equals: 347757 #kWh
-                energy_cap_equals: 166153 #kW
-        locations.R14:
-            techs.tes.constraints:
-                storage_cap_equals: 278081 #kWh
-                energy_cap_equals: 132863 #kW
-        locations.R15:
-            techs.tes.constraints:
-                storage_cap_equals: 1146891 #kWh
-                energy_cap_equals: 547965 #kW
-        locations.R16:
-            techs.tes.constraints:
-                storage_cap_equals: 2210150 #kWh
-                energy_cap_equals: 1055973 #kW
-        locations.R17:
-            techs.tes.constraints:
-                storage_cap_equals: 117030 #kWh
-                energy_cap_equals: 55915 #kW
-        locations.R18:
-            techs.tes.constraints:
-                storage_cap_equals: 1335554 #kWh
-                energy_cap_equals: 638105 #kW
-        locations.SICI:
-            techs.tes.constraints:
-                storage_cap_equals: 2026987 #kWh
-                energy_cap_equals: 968460 #kW
-        locations.SARD:
-            techs.tes.constraints:
-                storage_cap_equals: 1977168 #kWh
-                energy_cap_equals: 944658 #kW
-       
-    
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat.exists: true
+            techs.demand_heat.constraints:
+                    resource: file=demand_heat.csv
