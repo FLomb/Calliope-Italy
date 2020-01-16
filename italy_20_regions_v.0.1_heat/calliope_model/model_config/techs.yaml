@@ -326,6 +326,31 @@ techs:
                 energy_cap: 4000  # €/kW
                 om_annual: 100 # €/kW/year
                 
+    # imports
+    el_import:  # Generic HVDC import technology
+        essentials:
+            name: 'Electricity import'
+            color: '#E68A31'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints: 
+            resource: 6e6 # infinite supply
+            resource_cap_equals: 6e6 # infinite supply
+            energy_cap_equals: 6e6 # infinite supply
+            force_resource: False
+            energy_prod: True
+            resource_eff: 1
+            lifetime: 40
+        costs:
+            monetary:
+                om_prod: 0.04 # average (years 2004-2018) price on the Italian market according to GSE data
+            co2:
+                om_prod: 0.012 # adapted from Pfenninger, Calliope UK
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+    # imports-end
+    
     ##
     # Storage
     ##
@@ -384,7 +409,7 @@ techs:
         costs:
             monetary:
                 interest_rate: 0.1
-                om_prod: 0.0022  # €/kWh, adapted from Calliope-UK
+                om_prod: 0.013  # €/kWh, adapted from Calliope-UK
             co2:
                 om_prod: 0.0001 # dummy cost to avoid weird transmission behaviour
             nos_score:
@@ -427,7 +452,7 @@ techs:
             parent: demand
             carrier: dhw
         constraints:
-            resource_scale: 1000
+            resource_scale: 1
     # demand_heat-end
 
     # export
@@ -442,7 +467,7 @@ techs:
             resource: -6e6 # infinite sink
         costs:
             monetary:
-                om_con: -0.063 # average (years 2004-2018) price on the Italian market according to GSE data
+                om_con: -0.04 # average (years 2004-2018) price on the Italian market according to GSE data
     # export-end
     
     # curtailment

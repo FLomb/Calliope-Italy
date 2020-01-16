@@ -50,7 +50,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 20000000 #kW, i.e. 20 GW  
+                    energy_cap_equals: 20000000 #kW, i.e. 20 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 7361600 #kW
@@ -59,7 +59,7 @@ locations:
                     energy_cap_equals: 3830000 #kW
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv
+                    resource: file=demand_zones_terna.csv
             dummy_tech:         
         coordinates: {lat: 45.219847, lon: 9.624722}  
             
@@ -350,7 +350,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 2000000 #kW, i.e. 2 GW  
+                    energy_cap_equals: 2000000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 790900 #kW
@@ -359,7 +359,7 @@ locations:
                     energy_cap_equals: 310000 #kW
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv
+                    resource: file=demand_zones_terna.csv
             dummy_tech:
         coordinates: {lat: 43.460750, lon: 11.861967}    
          
@@ -369,7 +369,7 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_max: 1280000 #kW
+                    energy_cap_equals: 1280000 #kW
             geothermal:
                 constraints:
                     resource: 768000
@@ -410,7 +410,7 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_max: 150000 #kW
+                    energy_cap_equals: 150000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -477,7 +477,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 8800000 #kW, i.e. 8.8 GW  
+                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 563400 #kW
@@ -486,7 +486,7 @@ locations:
                     energy_cap_equals: 490000 #kW
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv
+                    resource: file=demand_zones_terna.csv
             dummy_tech:
         coordinates: {lat: 41.634090, lon: 13.335471} 
         
@@ -496,7 +496,7 @@ locations:
         techs:
             coal_usc:
                 constraints:
-                    energy_cap_max: 1845000 #kW
+                    energy_cap_equals: 1845000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -608,7 +608,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 8800000 #kW, i.e. 8.8 GW                   
+                    energy_cap_equals: 8800000 #kW, i.e. 8.8 GW                   
             hydro_dam:
                 constraints:
                     energy_cap_equals: 686700 #kW
@@ -617,7 +617,7 @@ locations:
                     energy_cap_equals: 260000 #kW
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv
+                    resource: file=demand_zones_terna.csv
             dummy_tech:
         coordinates: {lat: 40.678274, lon: 16.597098} 
     
@@ -661,7 +661,7 @@ locations:
         techs:
             coal:
                 constraints:
-                    energy_cap_max: 3060000 #kW
+                    energy_cap_equals: 3060000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -732,7 +732,7 @@ locations:
         techs:
             oil_&_other:
                 constraints:
-                    energy_cap_max: 1738000 #kW
+                    energy_cap_equals: 1738000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -770,7 +770,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 2000000 #kW, i.e. 2 GW
+                    energy_cap_equals: 2000000 #kW, i.e. 2 GW
             hydro_dam:
                 constraints:
                     energy_cap_equals: 15800 #kW
@@ -779,7 +779,7 @@ locations:
                     energy_cap_equals: 130000 #kW
             oil_&_other:
                 constraints:
-                    energy_cap_max: 530000 #kW
+                    energy_cap_equals: 530000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv
@@ -810,7 +810,7 @@ locations:
             el_curtailment:
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv
+                    resource: file=demand_zones_terna.csv
         coordinates: {lat: 37.511642, lon: 15.085379} 
         
     # 19-Sicilia-end
@@ -822,7 +822,7 @@ locations:
         techs:
             ccgt:
                 constraints:
-                    energy_cap_max: 2400000 #kW, i.e. 2 GW  
+                    energy_cap_equals: 2400000 #kW, i.e. 2 GW  
             hydro_dam:
                 constraints:
                     energy_cap_equals: 183800 #kW
@@ -831,10 +831,10 @@ locations:
                     energy_cap_equals: 40000 #kW
             coal:
                 constraints:
-                    energy_cap_max: 1072000 #kW
+                    energy_cap_equals: 1072000 #kW
             oil_&_other:
                 constraints:
-                    energy_cap_max: 320000 #kW
+                    energy_cap_equals: 320000 #kW
             wind: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -868,7 +868,7 @@ locations:
             el_curtailment:
             demand_power:
                 constraints:
-                    resource: file=regional_demand_fullTerna.csv                 
+                    resource: file=demand_zones_terna.csv                 
         coordinates: {lat: 40.302551, lon: 9.319396} 
         
     # 20-Sardegna-end
@@ -915,27 +915,27 @@ links:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_max: 3200000 #kW
+                    energy_cap_equals: 3200000 #kW
     CH,R3:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_max: 4200000 #kW
+                    energy_cap_equals: 4200000 #kW
     AT,R4:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_max: 300000 #kW
+                    energy_cap_equals: 300000 #kW
     SI,R6:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_max: 700000 #kW
+                    energy_cap_equals: 700000 #kW
     GR,R16:
         techs:
             inter_zonal:
                 constraints:
-                    energy_cap_max: 500000 #kW
+                    energy_cap_equals: 500000 #kW
     ## inter-zonal transmission - end
     
     ## intra-zonal free transmission - start
