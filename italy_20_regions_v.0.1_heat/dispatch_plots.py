@@ -189,3 +189,84 @@ def power_plot(model_inst, start, stop):
     
     return(fig,lgd)   
 
+#%%
+'''
+Multi-node plots pre-processing - Heat sector
+'''
+def heat_plot(model_inst, start, stop, region):
+    
+    locs = [region]
+            # ['R1','R2','R3','R4','R5','R6','R7','R8',
+            # 'R9','R10','R11','R12','R13','R14','R15',
+            # 'R16','R17','R18','SARD','SICI']
+    
+    hp_dict = {}
+    hp_con_dict = {}
+    tes_soc_dict = {}
+    tes_dis_dict = {}
+    tes_ch_dict = {}
+    tes_out_dict = {}
+    tes_in_dict = {}
+    demand_dhw_dict = {}
+    
+    hp_plot = {}
+    hp_con_plot = {}
+    tes_soc_plot = {}
+    tes_dis_plot = {}
+    tes_ch_plot = {}
+    demand_dhw_plot = {}
+    
+    
+    for reg in locs:
+        
+        hp_dict[reg] = model_inst.get_formatted_array('carrier_prod').loc[{'techs':'ashp','carriers':'dhw','locs':reg}].to_pandas().T
+        hp_con_dict[reg] = model_inst.get_formatted_array('carrier_con').loc[{'techs':'ashp','carriers':'electricity','locs':reg}].to_pandas().T
+        tes_soc_dict[reg] = model_inst.get_formatted_array('storage').loc[{'techs':'tes','locs':reg}].to_pandas().T
+        demand_dhw_dict[reg] = -model_inst.get_formatted_array('carrier_con').loc[{'techs':'demand_heat','carriers':'dhw','locs':reg}].to_pandas().T
+        tes_dis_dict[reg] = model_inst.get_formatted_array('carrier_prod').loc[{'techs':'tes','carriers':'dhw','locs':reg}].to_pandas().T
+        tes_ch_dict[reg] = model_inst.get_formatted_array('carrier_con').loc[{'techs':'tes','carriers':'dhw','locs':reg}].to_pandas().T
+        tes_out_dict[reg] = tes_dis_dict[reg]+tes_ch_dict[reg]
+        tes_out_dict[reg][tes_out_dict[reg]<0]=0
+        tes_in_dict[reg] = tes_dis_dict[reg]+tes_ch_dict[reg]
+        tes_in_dict[reg][tes_in_dict[reg]>0]=0
+        
+        hp_plot[reg] = hp_dict[reg]/1e6
+        hp_con_plot[reg] = -hp_con_dict[reg]/1e6
+        tes_dis_plot[reg] = hp_plot[reg] + tes_out_dict[reg]/1e6
+        tes_ch_plot[reg] = tes_in_dict[reg]/1e6
+        demand_dhw_plot[reg] = demand_dhw_dict[reg]/1e6
+
+
+    '''
+    Regional Heat Plots
+    '''
+    
+    day = start #'2015-01-01 00:00:00'
+    end = stop #'2015-01-07 23:00:00'
+    
+    fig, (ax1) = plt.subplots(1,1, sharex='col', gridspec_kw = {'height_ratios':[1], 'wspace':0.1, 'hspace':0.2}, figsize=(5,4))
+    ax_dict = {reg: ax1}
+    fig.autofmt_xdate()
+    xfmt = mdates.DateFormatter('%m-%d')
+    
+    for reg in locs:
+        
+        ax_dict[reg].plot(demand_dhw_plot[reg][day:end].index,demand_dhw_plot[reg][day:end].values,'#000000', alpha=0.5, linestyle = '-', label ='DHW loads')
+        ax_dict[reg].plot(hp_plot[reg][day:end].index,hp_plot[reg][day:end].values,'#EC3623', alpha=0.2)
+        ax_dict[reg].plot(tes_dis_plot[reg][day:end].index,tes_dis_plot[reg][day:end].values,'#EC8123', alpha=0.2)
+        ax_dict[reg].plot(tes_ch_plot[reg][day:end].index,tes_ch_plot[reg][day:end].values,'#EC8123', alpha=0.2)
+        ax_dict[reg].plot(hp_con_plot[reg][day:end].index,hp_con_plot[reg][day:end].values,'b', alpha=0.8, linestyle = ':', label ='Electricity consumption')
+        ax_dict[reg].set_ylabel('Power (GW)',labelpad = 11)
+        #ax_dict[reg].set_xlabel('UTC Time (hours)')
+        #ax_dict[reg].set_ylim(ymax = 28)
+        ax_dict[reg].margins(x=0)
+        ax_dict[reg].margins(y=0)
+        #ax_dict[reg].set_xticks(np.arange(0,24,3))
+        #ax_dict[reg].set_xticklabels(['0','3','6','9','12','15','18','21','24'])
+        ax_dict[reg].fill_between(demand_dhw_plot[reg][day:end].index,0,hp_plot[reg][day:end].values,facecolor = '#EC3623', alpha = 0.6, label = 'Heat Pumps')
+        ax_dict[reg].fill_between(demand_dhw_plot[reg][day:end].index,hp_plot[reg][day:end].values,tes_dis_plot[reg][day:end].values,facecolor = '#EC8123', alpha = 0.6, label = 'Thermal Energy Storage')
+        ax_dict[reg].fill_between(demand_dhw_plot[reg][day:end].index,0,tes_ch_plot[reg][day:end].values,facecolor = '#EC8123', alpha = 0.6)
+        ax_dict[reg].xaxis.set_major_formatter(xfmt)
+    lgd = ax_dict[reg].legend(loc=1,  bbox_to_anchor=(1.7,1))
+    
+    return(fig,lgd)   

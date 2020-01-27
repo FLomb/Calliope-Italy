@@ -343,7 +343,7 @@ techs:
             lifetime: 40
         costs:
             monetary:
-                om_prod: 0.04 # average (years 2004-2018) price on the Italian market according to GSE data
+                om_prod: file=import_price.csv # 0.04 # average (years 2004-2018) price on the Italian market according to GSE data
             co2:
                 om_prod: 0.012 # adapted from Pfenninger, Calliope UK
             nos_score:
@@ -467,7 +467,7 @@ techs:
             resource: -6e6 # infinite sink
         costs:
             monetary:
-                om_con: -0.04 # average (years 2004-2018) price on the Italian market according to GSE data
+                om_con: file=import_price.csv # -0.04 # average (years 2004-2018) price on the Italian market according to GSE data
     # export-end
     
     # curtailment

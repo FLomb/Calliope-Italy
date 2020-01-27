@@ -13,7 +13,7 @@ model:
     # Time series data path - can either be a path relative to this file, or an absolute path
     timeseries_data_path: 'timeseries_data'
 
-    subset_time: ['2015-01-12', '2015-01-18']  # Subset of timesteps
+    subset_time: ['2015-06-15', '2015-06-21']  # Subset of timesteps
     
     reserve_margin:
         electricity: 0.1  # 10% reserve margin for power
