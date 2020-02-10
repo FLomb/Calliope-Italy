@@ -16,7 +16,7 @@ To run the model over a week of data for testing:
 
 ## Italian 20-region energy system
 
-<img src="https://github.com/FLomb/Calliope-Italy/blob/master/italy_model_map.png" width="600">
+<img src="https://github.com/FLomb/Calliope-Italy/blob/ECOS_2020/italy_model_map.png" width="600">
 
 ## Author
 Francesco Lombardi </br>
