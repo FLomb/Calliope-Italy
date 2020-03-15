@@ -1,0 +1,1883 @@
+##
+# Overrides for different example model configuratiions
+##
+overrides:
+
+    p2h_tcl:
+        model.name: Additional P2H-TCL load
+        
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_zones_p2h_tcl.csv
+        
+    p2h_pvtcl:
+        model.name: Additional P2H-PVTCL load
+        
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_zones_p2h_pvtcl.csv
+        
+    p2h_dlc_only_DHW:
+        model.name: Adding heat-pumps, thermal storages and DHW loads
+        
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        
+        techs.ashp_DHW.exists: true
+        techs.tes_DHW.exists: true
+        techs.demand_heat_DHW.exists: true
+        
+        locations.R1:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R2:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R3:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R4:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R5:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R6:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R7:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R8:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R9:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R10:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R11:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R12:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R13:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R14:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R15:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R16:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R17:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.R18:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.SICI:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+        locations.SARD:
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=cop_regions_DHW.csv
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+
+    p2h_dlc_DHW_and_floor_heating:
+        model.name: 'Adding heat pumps, DHW with thermal storage and floor heating with thermal storage'
+        
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        
+        techs.ashp_DHW.exists: true
+        techs.ashp_SH_DHW_floor.exists: true
+        techs.ashp_SH_floor.exists: true
+        techs.tes_DHW.exists: true
+        techs.tes_floor_heating.exists: true        
+        techs.demand_heat_DHW.exists: true
+        techs.demand_heating_floor.exists: true
+        
+        locations.R1: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv        
+        locations.R2: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R3: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R4: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R5: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R6: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R7: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R8: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R9: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R10: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R11: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R12: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R13: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R14: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R15: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R16: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R17: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.R18: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.SICI: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+        locations.SARD: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: 1
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv    
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_only.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv  
+    p2h_dlc_DHW_SH_full_decarbonization:
+   
+        model.name: 'Adding heat pumps, DHW with thermal storage, floor heating with thermal storage and conventional heating with thermal storage'
+        
+        locations.NORD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CNOR.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.CSUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SUD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SARD.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        locations.SICI.techs.demand_power.constraints.resource: file=demand_zones_noboiler.csv
+        
+        techs.ashp_DHW.exists: true
+        techs.ashp_SH_conv.exists: true
+        techs.ashp_SH_floor.exists: true
+        techs.ashp_SH_DHW_conv.exists: true
+        techs.ashp_SH_DHW_floor.exists: true
+        techs.tes_DHW.exists: true
+        techs.tes_floor_heating.exists: true
+        techs.tes_conv_heating.exists: true        
+        techs.demand_heat_DHW.exists: true
+        techs.demand_heating_conv.exists: true
+        techs.demand_heating_floor.exists: true
+        
+        locations.R1: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv 
+        locations.R2: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R3: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R4: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R5: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R6: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R7: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R8: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R9: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R10: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R11: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R12: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R13: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R14: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R15: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R16: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R17: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.R18: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.SARD: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+        locations.SICI: 
+            techs.ashp_DHW.exists: true
+            techs.ashp_DHW.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_DHW.csv
+            techs.ashp_SH_conv.exists: true
+            techs.ashp_SH_conv.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_conv_heating.csv
+            techs.ashp_SH_floor.exists: true
+            techs.ashp_SH_floor.constraints:
+                energy_cap_equals: 0 #kW
+                energy_eff: file=COP_regions_floor_heating.csv
+            techs.ashp_SH_DHW_conv.exists: true
+            techs.ashp_SH_DHW_conv.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_conv_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_conv.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.ashp_SH_DHW_floor.exists: true
+            techs.ashp_SH_DHW_floor.constraints.carrier_ratios.carrier_out:
+                heat: file=COP_regions_floor_heating.csv
+                dhw: file=COP_regions_DHW.csv
+            techs.ashp_SH_DHW_floor.constraints:
+                energy_eff: 1
+                energy_cap_equals: 0 #kW
+            techs.tes_DHW.exists: true
+            techs.tes_DHW.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_floor_heating.exists: true
+            techs.tes_floor_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.tes_conv_heating.exists: true
+            techs.tes_conv_heating.constraints:
+                storage_cap_equals: 0 #kWh
+                energy_cap_equals: 0 #kW
+            techs.demand_heat_DHW.exists: true
+            techs.demand_heat_DHW.constraints:
+                    resource: file=demand_regions_heating_DHW_secondo_scenario.csv
+            techs.demand_heating_conv.exists: true
+            techs.demand_heating_conv.constraints:
+                    resource: file=demand_regions_heating_conv.csv
+            techs.demand_heating_floor.exists: true
+            techs.demand_heating_floor.constraints:
+                    resource: file=demand_regions_heating_floor.csv
+ 
+                   
