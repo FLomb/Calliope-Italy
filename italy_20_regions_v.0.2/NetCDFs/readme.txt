@@ -1,0 +1,1 @@
+This folder stores the SPORES as NetCDFs
