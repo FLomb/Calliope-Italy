@@ -301,6 +301,7 @@ Extra-runs for potentially-problematic technologies
 
 incremental_score[nos_number] = incremental_score[0]
 count = 1
+n = len(nos_dict)-1
 for t in ppts:
 
     '''
@@ -317,7 +318,6 @@ for t in ppts:
     '''
     Model creation and run
     '''
-    n = len(nos_dict)-1
     m = ppt_nos_number
     inter_count = 1   
     for j in range(n+1+m*(count-1),(n+1+m*count)):

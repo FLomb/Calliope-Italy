@@ -15,11 +15,11 @@ model:
     # Time series data path - can either be a path relative to this file, or an absolute path
     timeseries_data_path: 'timeseries_data'
 
-    subset_time: ['2015-01-01', '2015-01-07']  # Subset of timesteps
+    subset_time: ['2015-01-01', '2015-12-31']  # Subset of timesteps
     
-    time:
-        function: resample
-        function_options: {'resolution': '12H'}
+    # time:
+        # function: resample
+        # function_options: {'resolution': '3H'}
     
     reserve_margin:
         electricity: 0.1  # 10% reserve margin for power
