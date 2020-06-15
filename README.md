@@ -14,7 +14,7 @@ To run the model over a week of data for testing:
 - select the 'subset_time' of interest in the model.yaml file
 - run the spores_model_run.py file
 
-Please notice that all timeseries are indexed to 2015 for convention (this was the year originally used to test the model against TSO data), but the actual weather year is 2016 in the reference scenario - and any year in the range 1981-2016 can be selected from the folder "paper_scenarios/full_list_of_weather_years".
+Please notice that *all timeseries are indexed to 2015 for convention* (this was the year originally used to test the model against TSO data), but the actual weather year is 2016 in the reference scenario - and any year in the range 1981-2016 can be selected from the folder "*paper_scenarios/full_list_of_weather_years*". Further details are provided in "*paper_scenarios/nomenclature.md*".
 
 ## Italian 20-region energy system
 
