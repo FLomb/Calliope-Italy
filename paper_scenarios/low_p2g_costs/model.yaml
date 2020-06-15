@@ -1,0 +1,66 @@
+import:  # Import other files from paths relative to this file, or absolute paths
+    - 'model_config/techs.yaml'  # This file specifies the model's technologies
+    - 'model_config/locations.yaml'  # This file specifies the model's locations
+    - 'overrides.yaml' # This import overrides
+    - 'model_config/new_techs.yaml'
+    - 'model_config/new_locations.yaml'
+        
+# Model configuration: all settings that affect the built model
+model:
+    name: Italy energy system 6-20 nodes
+
+    # What version of Calliope this model is intended for
+    calliope_version: 0.6.4
+
+    # Time series data path - can either be a path relative to this file, or an absolute path
+    timeseries_data_path: 'timeseries_data'
+
+    subset_time: ['2015-01-01', '2015-12-31']  # Subset of timesteps
+    
+    # time:
+        # function: resample
+        # function_options: {'resolution': '6H'}
+    
+    reserve_margin:
+        electricity: 0.1  # 10% reserve margin for power
+
+# Run configuration: all settings that affect how the built model is run
+run:
+    solver: gurobi
+    
+    solver_options:
+        Method: 2
+        Crossover: -0
+        BarConvTol: 1e-4
+        BarHomogeneous: 1
+        BarIterLimit: 5000
+        OptimalityTol: 1e-4
+        FeasibilityTol: 1e-4
+
+    ensure_feasibility: False  # Switches on the "unmet demand" constraint
+
+    bigM: 1e6  # Sets the scale of unmet demand, which cannot be too high, otherwise the optimisation will not converge
+
+    zero_threshold: 1e-10  # Any value coming out of the backend that is smaller than this (due to floating point errors, probably) will be set to zero
+
+    mode: plan  # Choices: plan, operate
+    
+    operation:
+        horizon: 48
+        window: 24
+        
+    objective_options:
+        cost_class: {'monetary': 1, 'co2': 0, 'nos_score': 0, 'excl_score': 0}
+        
+        
+group_constraints:
+    systemwide_max_slacked_cost:
+        cost_max:
+            monetary: .inf
+    systemwide_max_slacked_co2:
+        cost_max:
+            co2: .inf
+    vres_min_prod_share:
+        techs: ['biomass_wood', 'wte', 'biofuel', 'biogas', 'biogas_new', 'el_import', 'hydro_dam', 'hydro_ror', 'geothermal','wind','pv_farm','pv_rooftop','wind_new','pv_farm_new','pv_rooftop_new','wind_offshore']
+        supply_share_min: 
+            electricity: 1

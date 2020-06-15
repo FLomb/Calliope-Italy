@@ -1,0 +1,375 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+# Note: '-start' and '-end' is used in tutorial documentation only
+
+techs:
+
+    ##
+    # Conversion
+    ##
+    
+    # electrolysis
+    electrolysis:
+        essentials:
+            name: 'Electrolysis'
+            color: '#DB4D70'
+            parent: conversion
+            carrier_out: hydrogen
+            carrier_in: electricity
+        constraints:
+            lifetime: 18
+            energy_eff: 0.66
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 1932 # €/kW_H2, various sources, 2030 projection
+                om_annual: 58 # €/kW/year, sources as above
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0     
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # electrolysis-end
+    
+    # methanation+DAC
+    methanation_dac:
+        essentials:
+            name: 'Methanationa+DAC'
+            color: '#F5BCA9'
+            parent: conversion
+            carrier_out: methane
+            carrier_in: hydrogen           
+        constraints:
+            lifetime: 25
+            energy_eff: 0.8
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 1404 # €/kW_CH4, various sources and own calculations, see text
+                om_annual: 56 # €/kW/year, sources as above
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0     
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0                
+    # methanation+DAC-end
+    
+    # ccgt_syngas
+    ccgt_syngas:
+        essentials:
+            name: 'carbon-neutral CCGT'
+            color: '#848484'
+            parent: conversion
+            carrier_out: electricity
+            carrier_in: methane           
+        constraints:
+            lifetime: 25
+            energy_eff: 0.56
+            energy_ramping: 0.8 # source: Pfenninger UK model
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 0.001 # revamped plants, dummy cost to avoid unnecessary capacity deployment
+                om_prod: 0.00315  # €/kWh
+                om_annual: 10.5 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0     
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0                
+    # ccgt_syngas-end
+
+    ##
+    # Supply
+    ##
+
+    # wind-off-shore
+    wind_offshore:
+        essentials:
+            name: 'New off-shore wind power'
+            color: '#47D154'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 30
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 2481  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 27 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0     
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # wind-end
+
+    
+    # wind
+    wind_new:
+        essentials:
+            name: 'New on-shore wind power'
+            color: '#47D154'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 25
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 1306  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 28 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0   
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0                
+    # wind-end
+    
+    # pv farm
+    pv_farm_new:
+        essentials:
+            name: 'New photovoltaic power farm-scale'
+            color: '#F9FF2C'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 30
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 677  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 15 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0  
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0                
+    # pv farm-end
+    
+    # pv rooftop
+    pv_rooftop_new:
+        essentials:
+            name: 'New Photovoltaic power distributed'
+            color: '#CCFF2C'
+            parent: supply_plus
+            carrier_out: electricity
+        constraints:
+            force_resource: True
+            resource_unit: energy_per_cap
+            lifetime: 26
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 871  # €/kW
+                om_prod: 0  # €/kWh
+                om_annual: 20 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0  
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0                
+    # pv rooftop-end
+    
+    # biogas new
+    biogas_new:
+        essentials:
+            name: 'New biogas power plant'
+            color: '#5AA24D'
+            parent: supply
+            carrier_out: electricity
+        constraints:
+            resource: inf
+            energy_eff: 0.39
+            lifetime: 20
+            energy_cap_max_systemwide: 4e6 # 4 GW
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 2901  # €/kW
+                om_annual: 184 # €/kW/year
+                om_con: 0.04 # €/kWh             
+            co2:
+                om_prod: 0.133 #kgCO2/kWh, source: ISPRA 2018  
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0  
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # biogas new-end
+    
+    ##
+    # Storage
+    ##
+    # pumped-hydro storage
+    phs_new:
+        essentials:
+            name: 'New PHS storage'
+            color: '#4875A0'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_per_storage_cap_equals: 0.01
+            energy_eff: 0.87  # 0.87 * 0.87 = 0.75 round-trip efficiency
+            storage_loss: 0  # No loss over time assumed
+            lifetime: 50
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.10
+                energy_cap: 3218  # €/kW
+                om_annual: 48 # €/kW/year
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # pumped-hydro storage-end
+    
+    # battery storage
+    battery:
+        essentials:
+            color: '#177202'
+            name: 'Battery energy storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            energy_cap_per_storage_cap_max: 0.25  # {own_assumptions}
+            energy_eff: 0.98  # 0.98*0.98 = 0.96 round-trip eff {IRENA2017}
+            storage_cap_max: 2e+8
+            lifetime: 15  # {Brown et al. , Energy, 2018}
+            # force_asynchronous_prod_con: True
+        costs:
+            monetary:
+                interest_rate: 0.1
+                storage_cap: 433  # {IRENA2017 and O. Schmidt, A. Hawkes, A. Gambhir and I. Staffell, Nature En. 2017}
+                om_annual: 7.22  # converted from Calliope-UK
+                om_prod: 0.0022  # converted from Calliope-UK
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # battery storage-end
+    
+    # gas network storage
+    gas_network_storage:
+        essentials:
+            color: '#F5A9E1'
+            name: 'Gas network storage'
+            parent: storage
+            carrier: methane
+        constraints:
+            energy_cap_per_storage_cap_max: 0.01  # {own_assumption}
+            energy_eff: 0.99  # 0.99*0.99 = 0.98 round-trip eff 
+            storage_cap_equals: 1e+10 # << existing gas storage capacity but still practically infinite for the model
+            storage_initial: 0
+            # energy_cap_max_systemwide: 1e8
+            lifetime: 50  # {Brown et al. , Energy, 2018}
+            # force_asynchronous_prod_con: True
+        costs:
+            monetary:
+                interest_rate: 0.1
+                storage_cap: 0  # 
+                om_annual: 0  # 
+    # gas network storage-end
+        
+    ##
+    # Transmission
+    ##
+    
+    # inter-zonal
+    inter_zonal_new:  # Generic HVAC inter-zonal transmission technology
+        essentials:
+            name: 'New transmission inter-zonal electricity'
+            color: '#966F9E'
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_eff: 0.96
+            lifetime: 40
+            energy_cap_min: 0
+        costs:
+            monetary:
+                interest_rate: 0.1
+                om_prod: 0.0022  # €/kWh, adapted from Calliope-UK
+            co2:
+                om_prod: 0.0001 #dummy cost to avoid weird transmission behaviour
+            nos_score:
+                interest_rate: 1
+                energy_cap: 0
+            excl_score:
+                interest_rate: 1
+                energy_cap: 0
+    # inter-zonal-end
+    
+    # gas inter-zonal transmission
+    gas_inter_zonal_transmission:  # free transmission of gas 
+        essentials:
+            name: 'Transmission inter-zonal gas'
+            color: '#966F9E'
+            parent: transmission
+            carrier: methane
+        constraints:
+            energy_cap_equals: 1e8 #100GW i.e. inf
+            energy_eff: 0.96
+        costs:
+            monetary:
+                om_prod: 0.015  # €/kWh - Adapted from Hauser et al., Resilience in the German natural gas network - Modelling Approach for a High-Resolution Natural Gas System, IEEE
+    # gas inter-zonal transmission-end
+    
+    # gas free transmission
+    gas_free_transmission:  # free transmission of gas 
+        essentials:
+            name: 'Transmission gas'
+            color: '#966F9E'
+            parent: transmission
+            carrier: methane
+        constraints:
+            energy_cap_equals: 1e8 #100GW i.e. inf
+            energy_eff: 1.0
+        costs:
+            monetary:
+                om_prod: 0  # €/kWh 
+    # gas free transmission-end
+    
+    # hard-to-decarbonise uses
+    hydrogen_market:  
+        essentials:
+            name: 'Hydrogen market'
+            color: '#ABD3EC'
+            parent: demand
+            carrier_in: hydrogen
+        constraints:
+            resource: -1e8
+            force_resource: False
+        costs:
+            monetary:
+                om_con: -0.06 # conversion from current market price of Hydrogen (2.3 USD/kg)
+    # hard-to-decarbonise uses-end
