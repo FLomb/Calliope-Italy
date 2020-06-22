@@ -24,10 +24,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 25794000 #kW_H2
+                    energy_cap_max: 21280050 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 15476400 #kW_CH4
+                    energy_cap_max: 17024040 #kW_CH4
             wind_new: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -62,10 +62,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 572400 #kW_H2
+                    energy_cap_max: 472230 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 343440 #kW_CH4
+                    energy_cap_max: 377784 #kW_CH4
             wind_new: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -100,10 +100,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 46002240 #kW_H2
+                    energy_cap_max: 37951848 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 27601344 #kW_CH4
+                    energy_cap_max: 30361478 #kW_CH4
             wind_new: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -138,10 +138,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 5540800 #kW_H2
+                    energy_cap_max: 4571160 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 3324480 #kW_CH4
+                    energy_cap_max: 3656928 #kW_CH4
             wind_new: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -176,10 +176,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 37924720 #kW_H2
+                    energy_cap_max: 31287894 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 22754832 #kW_CH4
+                    energy_cap_max: 25030315 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -221,10 +221,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 10844320 #kW_H2
+                    energy_cap_max: 8946564 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 6506592 #kW_CH4
+                    energy_cap_max: 7157251 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -266,10 +266,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 8736320 #kW_H2
+                    energy_cap_max: 7207464 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 5241792 #kW_CH4
+                    energy_cap_max: 5765971 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -311,10 +311,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 38666400 #kW_H2
+                    energy_cap_max: 31899780 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 23199840 #kW_CH4
+                    energy_cap_max: 25519824 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -372,10 +372,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 37284160 #kW_H2
+                    energy_cap_max: 30759432 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 22370496 #kW_CH4
+                    energy_cap_max: 24607546 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -420,10 +420,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 10520800 #kW_H2
+                    energy_cap_max: 8679660 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 6312480 #kW_CH4
+                    energy_cap_max: 6943728 #kW_CH4
             wind_new: 
                 constraints:
                     resource: file=wind_series.csv 
@@ -461,10 +461,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 13043680 #kW_H2
+                    energy_cap_max: 10761036 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 7826208 #kW_CH4
+                    energy_cap_max: 8608829 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -526,10 +526,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 30711840 #kW_H2
+                    energy_cap_max: 25337268 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 18427104 #kW_CH4
+                    energy_cap_max: 20269814 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -574,10 +574,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 11253440 #kW_H2
+                    energy_cap_max: 9284088 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 6752064 #kW_CH4
+                    energy_cap_max: 7427270 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -622,10 +622,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 22639200 #kW_H2
+                    energy_cap_max: 18677340 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 13583520 #kW_CH4
+                    energy_cap_max: 14941872 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -686,10 +686,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 4973280 #kW_H2
+                    energy_cap_max: 4102956 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 2983968 #kW_CH4
+                    energy_cap_max: 3282365 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -734,10 +734,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 35634480 #kW_H2
+                    energy_cap_max: 29398446 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 21380688 #kW_CH4
+                    energy_cap_max: 23518757 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -782,10 +782,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 9491520 #kW_H2
+                    energy_cap_max: 7830504 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 5694912 #kW_CH4
+                    energy_cap_max: 6264403 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -830,10 +830,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 15945520 #kW_H2
+                    energy_cap_max: 13155054 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 9567312 #kW_CH4
+                    energy_cap_max: 10524043 #kW_CH4
             wind_offshore: 
                 constraints:
                     resource: file=wind_offshore_series.csv 
@@ -881,10 +881,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 43822320 #kW_H2
+                    energy_cap_max: 36153414 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 26293392 #kW_CH4
+                    energy_cap_max: 28922731 #kW_CH4
             ccgt_syngas:
                 constraints:
                     energy_cap_max: 2000000
@@ -937,10 +937,10 @@ locations:
             hydrogen_market:
             electrolysis:
                 constraints:
-                    energy_cap_max: 41516800 #kW_H2
+                    energy_cap_max: 34251360 #kW_H2
             methanation_dac:
                 constraints:
-                    energy_cap_max: 24910080 #kW_CH4
+                    energy_cap_max: 27401088 #kW_CH4
             ccgt_syngas:
                 constraints:
                     energy_cap_max: 2400000
