@@ -26,7 +26,7 @@ E-mail: francesco.lombardi@polimi.it </br>
 Politecnico di Milano, SESAM Group (http://sesam.polimi.it) </br>
 
 ## Citing
-If you use the Italian model or the related data, please cite the associated publication: "*Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Policy decision support for renewables deployment through spatially explicit practically optimal alternatives, [Unpublished]* "
+If you use the Italian model or the related data, please cite the associated publication: "*Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Policy decision support for renewables deployment through spatially explicit practically optimal alternatives, Joule (Oct 2020), 4, pp. 1-23, doi: [10.1016/j.joule.2020.08.002](https://doi.org/10.1016/j.joule.2020.08.002)* "
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
