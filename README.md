@@ -22,8 +22,8 @@ Please notice that *all timeseries are indexed to 2015 for convention* (this was
 
 ## Author
 Francesco Lombardi </br>
-E-mail: francesco.lombardi@polimi.it </br>
-Politecnico di Milano, SESAM Group (http://sesam.polimi.it) </br>
+E-mail: f.lombardi@tudelft.nl </br>
+TU Delft, Department of Engineering Systems and Services </br>
 
 ## Citing
 If you use the Italian model or the related data, please cite the associated publication: "*Francesco Lombardi, Bryn Pickering, Emanuela Colombo, Stefan Pfenninger, Policy decision support for renewables deployment through spatially explicit practically optimal alternatives, Joule (Oct 2020), 4, pp. 1-23, doi: [10.1016/j.joule.2020.08.002](https://doi.org/10.1016/j.joule.2020.08.002)* "
